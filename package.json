@@ -1,0 +1,19 @@
+{
+  "name": "createpersonsxmachine",
+  "version": "1.0.0",
+  "description": "gerador de personagens",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kassioteodoro/CreatePersonsXmachine.git"
+  },
+  "author": "Kassio Teodoro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kassioteodoro/CreatePersonsXmachine/issues"
+  },
+  "homepage": "https://github.com/Kassioteodoro/CreatePersonsXmachine#readme"
+}
