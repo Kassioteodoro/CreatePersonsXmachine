@@ -3,7 +3,7 @@ const connectToDatabase = require('./database/MongoDB/Connection');
 
 connectToDatabase()
   .then(() => {
-    appMongoDB.listen(3001, () => console.log('Running server on port: 3001'));
+    appMongoDB.listen(3001, () => console.log('Running server mongo on port: 3001'));
   })
   .catch((error) => {
     console.log('Connection with database generated an error:\r\n');
