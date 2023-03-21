@@ -2,9 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend CreatePersonsXmachine",
-  "main": "src/app.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "test": "mocha tests/**/**/*.test.js"
   },
   "author": "Kassio Teodoro",
   "license": "ISC",

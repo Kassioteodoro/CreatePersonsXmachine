@@ -94,7 +94,7 @@ const returnDBFindAll = [
   vantagens: [],
   desvantagens: [],
   equipamento: [],
-}
+},
 ];
 const returnDBUpdate = {
   id: '6348513f34c397abcad040b2',
