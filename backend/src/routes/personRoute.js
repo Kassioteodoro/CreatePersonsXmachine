@@ -4,6 +4,6 @@ const PersonController = require('../controllers/personController');
 
 const routes = Router();
 
-routes.post('', PersonController.create);
+routes.post('/', PersonController.create);
 
 module.exports = routes;
