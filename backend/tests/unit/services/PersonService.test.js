@@ -8,9 +8,9 @@ const {
 const PersonService = require('../../../src/services/personService');
 const ModelPerson = require('../../../src/database/MongoDB/modelPerson');
 
-describe('testando as regras de negocio do objeto Person', () => {
-  describe('e possivel cadastras um novo personagem', () => {
-    it('com sucesso', async () => {
+describe('testando as regras de negocio do objeto Person', function () {
+  describe('e possivel cadastras um novo personagem', function () {
+    it('com sucesso', async function () {
       // cenario
       sinon.stub(ModelPerson, 'create').resolves(returnDBCreate);
       
@@ -21,8 +21,8 @@ describe('testando as regras de negocio do objeto Person', () => {
       expect(responseService).to.deep.equal({ type: null, message: 'created sucess' });
     });
   });
-  describe('e possivel buscar todos os personagens de um usuario', () => {
-    it('com sucesso', () => {
+  describe('e possivel buscar todos os personagens de um usuario', function () {
+    it('com sucesso', function () {
       // cenario
       sinon.stub(Model, 'find').resolves(returnDBFindAll);
       
@@ -33,8 +33,8 @@ describe('testando as regras de negocio do objeto Person', () => {
       expect(responseService).to.deep.equal({ type: null, message: returnDBFindAll });
     });
   });
-  describe('e possivel buscar um personagem especifico', () => {
-    it('com sucesso', () => {
+  describe('e possivel buscar um personagem especifico', function () {
+    it('com sucesso', function () {
       // cenario
       sinon.stub(Model, 'findById').resolves(returnDBCreate);
       
@@ -45,8 +45,8 @@ describe('testando as regras de negocio do objeto Person', () => {
       expect(responseService).to.deep.equal({ type: null, message: returnDBCreate });
     });
   });
-  describe('e possivel atualizar um personagem especifico', () => {
-    it('com sucesso', () => {
+  describe('e possivel atualizar um personagem especifico', function () {
+    it('com sucesso', function () {
       // cenario
       sinon.stub(Model, 'updateOne').resolves(returnDBUpdate);
       
@@ -57,8 +57,8 @@ describe('testando as regras de negocio do objeto Person', () => {
       expect(responseService).to.deep.equal({ type: null, message: responseFrontUpdate });
     });
   });
-  describe('e possivel deletar um personagem especifico', () => {
-    it('com sucesso', () => {
+  describe('e possivel deletar um personagem especifico', function () {
+    it('com sucesso', function () {
            // cenario
            sinon.stub(Model, 'deleteOne').resolves();
       
@@ -69,7 +69,7 @@ describe('testando as regras de negocio do objeto Person', () => {
            expect(responseService).to.deep.equal({ type: null, message: 'remove sucess' });
     });
   });
-  afterEach(function() {
+  afterEach(function () {
     sinon.restore();
   });
 });
