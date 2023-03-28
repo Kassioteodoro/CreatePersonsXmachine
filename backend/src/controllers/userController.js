@@ -1,9 +1,9 @@
 const UserService = require('../services/userService');
 
-const create = async (req, res) => {
+const register = async (req, res) => {
   const { body } = req;
   try {
-    const response = await UserService.create(body);
+    const response = await UserService.register(body);
     return res.status(201).json(response.message);
   } catch (err) {
     return res.status(500).json({ message: err.message });
@@ -31,7 +31,7 @@ const getById = async (req, res) => {
 };
 
 module.exports = {
-  create,
+  register,
   login,
   getById,
 };

@@ -2,7 +2,7 @@ const { User } = require('../database/MySQLDB/models');
 
 const register = async (user) => {
   try {
-    const response = await User.create(user);
+    await User.create(user);
     return { type: null, message: 'created sucess' };
   } catch (err) {
     console.log(err);
