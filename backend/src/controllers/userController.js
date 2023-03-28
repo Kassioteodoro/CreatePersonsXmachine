@@ -1,8 +1,29 @@
 const UserService = require('../services/userService');
 
-const getAll = async (req, res) => {
+const create = async (req, res) => {
+  const { body } = req;
   try {
-    const response = await UserService.getAll();
+    const response = await UserService.create(body);
+    return res.status(201).json(response.message);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
+
+const login = async (req, res) => {
+  const { body } = req;
+  try {
+    const response = await UserService.login(body);
+    return res.status(200).json(response.message);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
+
+const getById = async (req, res) => {
+  const { params: { id } } = req;
+  try {
+    const response = await UserService.getById(id);
     return res.status(200).json(response.message);
   } catch (err) {
     return res.status(500).json({ message: err.message });
@@ -10,5 +31,7 @@ const getAll = async (req, res) => {
 };
 
 module.exports = {
-  getAll,
+  create,
+  login,
+  getById,
 };
