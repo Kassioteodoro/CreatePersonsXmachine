@@ -1,4 +1,5 @@
 const appMongoDB = require('./appMongoDB');
+const appMySQL = require('./appMySQL');
 const connectToDatabase = require('./database/MongoDB/Connection');
 
 connectToDatabase()
@@ -11,3 +12,5 @@ connectToDatabase()
     console.log('\r\nServer initialization cancelled');
     process.exit(0);
   });
+
+  appMySQL.listen(3000, console.log('Running server MySQL on port: 3000'));
