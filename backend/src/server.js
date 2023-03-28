@@ -13,4 +13,4 @@ connectToDatabase()
     process.exit(0);
   });
 
-  appMySQL.listen(3000, console.log('Server init MySQL port: 3000'));
+  appMySQL.listen(3000, console.log('Running server MySQL on port: 3000'));
