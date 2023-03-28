@@ -1,8 +1,9 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 const { 
-  responseFrontCreate, returnFunctionCreate,
-  responseFrontGet, responseDBGet, returnFunctionGet } = require('./mockUser');
+  
+  responseFrontOneUser,
+  responseDBOneUser } = require('./mockUser');
 
 const UserService = require('../../../src/services/userService');
 const { User } = require('../../../src/database/MySQLDB/models');
@@ -14,22 +15,36 @@ describe('testando as regras de negocio do objeto User', function () {
       sinon.stub(User, 'create').resolves();
       
       // execução
-      const responseService = await UserService.create(responseFrontCreate); 
+      const responseService = await UserService.create(responseFrontOneUser); 
 
       // test
-      expect(responseService).to.deep.equal(returnFunctionCreate);
+      expect(responseService).to.deep.equal({ type: null, message: 'created sucess' });
     });
   });
+
+  describe('e possivel efetuar um login', function () {
+    it('com sucesso', function () {
+      // cenario
+      sinon.stub(User, 'findOne').resolves(responseDBOneUser);
+      
+      // execução
+      const responseService = UserService.get(responseFrontOneUser);
+      
+      // test
+      expect(responseService).to.deep.equal({ type: null, message: responseDBOneUser });
+    });
+  });
+
   describe('e possivel buscar um usuario', function () {
     it('com sucesso', function () {
       // cenario
-      sinon.stub(User, 'findOne').resolves(responseDBGet);
+      sinon.stub(User, 'findOne').resolves(responseDBOneUser);
       
       // execução
-      const responseService = UserService.get(responseFrontGet);
+      const responseService = UserService.get(responseFrontOneUser);
       
       // test
-      expect(responseService).to.deep.equal({ type: null, message: returnFunctionGet });
+      expect(responseService).to.deep.equal({ type: null, message: responseDBOneUser });
     });
   });
   afterEach(function () {
