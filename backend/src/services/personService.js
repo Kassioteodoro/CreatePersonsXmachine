@@ -2,8 +2,7 @@ const Person = require('../database/MongoDB/modelPerson');
 
 const create = async (person) => {
   try {
-    const response = await Person.create(person);
-    console.log(response);
+    await Person.create(person);
     return { type: null, message: 'created sucess' };
   } catch (err) {
     console.log(err);

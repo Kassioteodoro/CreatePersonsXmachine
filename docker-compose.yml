@@ -12,6 +12,7 @@ services:
     container_name: docker_MySQLDB
     environment:
       - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=create_personDB
     restart: always
     ports:
       - 3306:3306

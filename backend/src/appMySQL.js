@@ -1,9 +1,9 @@
 const express = require('express');
 
-// const PersonRoute = require('./routes/personRoute');
+const UserRoute = require('./routes/userRoute');
 
 const app = express();
 app.use(express.json());
-app.get('/user', (req, res) => res.status(200).json({ messange: 'foi carai' }));
+app.use('/user', UserRoute);
 
 module.exports = app;
