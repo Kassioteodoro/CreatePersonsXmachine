@@ -8,9 +8,11 @@ const {
 const PersonService = require('../../../src/services/personService');
 const ModelPerson = require('../../../src/database/MongoDB/modelPerson');
 
+const sucessTitle = 'com sucesso';
+
 describe('testando as regras de negocio do objeto Person', function () {
   describe('e possivel cadastras um novo personagem', function () {
-    it('com sucesso', async function () {
+    it(sucessTitle, async function () {
       // cenario
       sinon.stub(ModelPerson, 'create').resolves(returnDBCreate);
       
@@ -22,9 +24,9 @@ describe('testando as regras de negocio do objeto Person', function () {
     });
   });
   describe('e possivel buscar todos os personagens de um usuario', function () {
-    it('com sucesso', function () {
+    it(sucessTitle, function () {
       // cenario
-      sinon.stub(Model, 'find').resolves(returnDBFindAll);
+      sinon.stub(ModelPerson, 'find').resolves(returnDBFindAll);
       
       // execução
       const responseService = PersonService.findAll(1);
@@ -34,9 +36,9 @@ describe('testando as regras de negocio do objeto Person', function () {
     });
   });
   describe('e possivel buscar um personagem especifico', function () {
-    it('com sucesso', function () {
+    it(sucessTitle, function () {
       // cenario
-      sinon.stub(Model, 'findById').resolves(returnDBCreate);
+      sinon.stub(ModelPerson, 'findById').resolves(returnDBCreate);
       
       // execução
       const responseService = PersonService.findOne('6348513f34c397abcad040b2');
@@ -46,9 +48,9 @@ describe('testando as regras de negocio do objeto Person', function () {
     });
   });
   describe('e possivel atualizar um personagem especifico', function () {
-    it('com sucesso', function () {
+    it(sucessTitle, function () {
       // cenario
-      sinon.stub(Model, 'updateOne').resolves(returnDBUpdate);
+      sinon.stub(ModelPerson, 'updateOne').resolves(returnDBUpdate);
       
       // execução
       const responseService = PersonService.update(responseFrontUpdate, '6348513f34c397abcad040b2');
@@ -58,9 +60,9 @@ describe('testando as regras de negocio do objeto Person', function () {
     });
   });
   describe('e possivel deletar um personagem especifico', function () {
-    it('com sucesso', function () {
+    it(sucessTitle, function () {
            // cenario
-           sinon.stub(Model, 'deleteOne').resolves();
+           sinon.stub(ModelPerson, 'deleteOne').resolves();
       
            // execução
            const responseService = PersonService.delete('6348513f34c397abcad040b2');
