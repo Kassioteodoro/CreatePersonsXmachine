@@ -1,5 +1,4 @@
 const responseFrontOneUser = {
-  name: 'kassio',
   email: 'kassio@gmail.com',
   password: 123456,
 };
