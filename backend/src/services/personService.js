@@ -10,9 +10,9 @@ const create = async (person) => {
   }
 };
 
-const getAll = async () => {
+const getAll = async (id) => {
   try {
-    const response = await Person.find();
+    const response = await Person.find({ userId: id });
     return { type: null, message: response };
   } catch (err) {
     console.log(err);
@@ -20,9 +20,9 @@ const getAll = async () => {
   }
 };
 
-const getOne = async (person) => {
+const getOne = async (id) => {
   try {
-    const response = await Person.findById(person);
+    const response = await Person.findById(id);
     return { type: null, message: response };
   } catch (err) {
     console.log(err);
@@ -30,9 +30,9 @@ const getOne = async (person) => {
   }
 };
 
-const update = async (person, id) => {
+const update = async (person, _id) => {
   try {
-    await Person.updateOne(id, person);
+    await Person.updateOne({ _id }, person);
     return { type: null, message: 'update sucess' };
   } catch (err) {
     console.log(err);
@@ -40,9 +40,9 @@ const update = async (person, id) => {
   }
 };
 
-const deleted = async (id) => {
+const deleted = async (_id) => {
   try {
-    await Person.deleteOne(id);
+    await Person.deleteOne({ _id });
     return { type: null, message: 'remove sucess' };
   } catch (err) {
     console.log(err);
