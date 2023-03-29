@@ -33,9 +33,6 @@ const getById = async (id) => {
 const login = async (user) => {
   try {
     const responseValid = await getByEmail(user.email);
-    // if (responseValid.type) {
-    //   return { type: 404, message: 'Not Found' };
-    // }
     return { type: null, message: responseValid.message };
   } catch (err) {
     console.log(err);
