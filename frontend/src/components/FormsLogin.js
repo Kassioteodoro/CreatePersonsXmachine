@@ -1,11 +1,13 @@
 
 import React, {useState} from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function FormsLogin() {
   const [inputEmail, setInputEmail ] = useState("")
   const [inputPassword, setInputPassword ] = useState(1)
+
+  const NavigateTo = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
     if ( name === "Email" ) {
@@ -24,9 +26,12 @@ function FormsLogin() {
         email: inputEmail,
         password: inputPassword,
       })
-      setInputEmail('');
-      setInputPassword(0);
-      console.log(response);
+      if (response.data) {
+        setInputEmail('');
+        setInputPassword(0);
+        return NavigateTo("/newpage")
+      } 
+      console.log("Error");
     } catch(err) {
       console.log(err.message);
     }

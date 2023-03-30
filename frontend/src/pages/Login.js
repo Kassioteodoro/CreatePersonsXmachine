@@ -9,7 +9,7 @@ function Login() {
       <FormsLogin />
       <button
         type="button"
-        onClick={() => console.log("embreve")}
+        onClick={() => console.log("em breve")}
       >
         fast create
       </button>
