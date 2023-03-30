@@ -29,7 +29,7 @@ function FormsLogin() {
       if (response.data) {
         setInputEmail('');
         setInputPassword(0);
-        return NavigateTo("/newpage")
+        return NavigateTo("/myPersons")
       } 
       console.log("Error");
     } catch(err) {
