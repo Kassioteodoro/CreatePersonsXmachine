@@ -3,13 +3,14 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import Login from './pages/Login'
 import Register from './pages/Register'
 import MyPersons from './pages/MyPersons'
+import Context from './context/Context';
 import UserContext from './context/UserContext';
 
 function App() {
 
   return (
     <div>
-      <UserContext>
+      <Context.Provider value={UserContext}>
         <Routes>
           <Route 
             exact path="/" 
@@ -27,7 +28,7 @@ function App() {
             element={ <MyPersons/>}
           />
         </Routes>
-      </UserContext>
+      </Context.Provider>
     </div>
   );
 }

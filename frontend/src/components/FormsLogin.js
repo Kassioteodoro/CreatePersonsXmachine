@@ -1,17 +1,20 @@
 
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import UserContext from '../context/UserContext';
 
+import axios from 'axios';
 function FormsLogin() {
   const [inputEmail, setInputEmail ] = useState("")
   const [inputPassword, setInputPassword ] = useState(1)
+  // const { user, setUser } = useContext(UserContext);
 
   const NavigateTo = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
     if ( name === "Email" ) {
       console.log(name, value);
+      // console.log(user);
       setInputEmail(value)
     }
     if ( name === "Password" ) {
@@ -31,6 +34,10 @@ function FormsLogin() {
         setInputPassword(0);
         return NavigateTo("/myPersons")
       } 
+      // setUser({
+      //   userID: response.data.id,
+      //   name: response.data.name
+      // })
       console.log("Error");
     } catch(err) {
       console.log(err.message);
