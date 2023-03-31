@@ -9,7 +9,7 @@ function MyPersons() {
   return (
     <div>
       <Header />
-      person
+      Persons
     </div>
   );
 }

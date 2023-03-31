@@ -1,11 +1,17 @@
 import React from 'react';
-function Login() {
+import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+
+function Create() {
+
+  const NavigateTo = useNavigate();
 
   return (
     <div>
-      login
+      <Header />
+      Create
     </div>
   );
 }
 
-export default Login;
+export default Create;
