@@ -4,7 +4,6 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import MyPersons from './pages/MyPersons'
 import Context from './context/Context';
-import ThemeContext from './context/Context';
 import Create from './pages/Create';
 import UserContext from './context/UserContext';
 
@@ -12,7 +11,7 @@ function App() {
   const [user, setUser ] = useState(UserContext) 
   return (
     <div>
-      <ThemeContext.Provider value={{user, setUser}}>
+      <Context.Provider value={{user, setUser}}>
         <Routes>
           <Route 
             exact path="/" 
@@ -34,7 +33,7 @@ function App() {
             element={ <Create/>}
           />
         </Routes>
-      </ThemeContext.Provider>
+      </Context.Provider>
     </div>
   );
 }

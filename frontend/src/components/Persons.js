@@ -10,9 +10,9 @@ function Persons() {
   const { user, setUser } = useContext(Context)
   
   const fetchPersons = async () => {
-    console.log(user);
-    const response = await axios.get(`http://localhost:3001/person/getAll/${1}`)
-    console.log(response);
+    const response = await axios.get(`http://localhost:3001/person/getAll/${user.userId}`)
+    console.log(response.data);
+    setPersons(response.data)
   } 
 
   useEffect(() => {
@@ -21,7 +21,15 @@ function Persons() {
 
   return (
     <div>
-      Persons
+      {
+            persons.map((person) => {
+              return (
+                <div  key={person._id}>
+               {person.nome}
+                </div>
+              );
+            })
+          }
     </div>
   );
 }

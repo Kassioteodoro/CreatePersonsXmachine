@@ -1,6 +1,6 @@
 // /src/context/ThemeContext.js
-import React, { createContext } from 'react';
+import { createContext } from 'react';
 
-const ThemeContext = createContext();
+const Context = createContext();
 
-export default ThemeContext;
+export default Context;
