@@ -11,7 +11,7 @@ function Login() {
       <FormsRegister />
       <button
         type="button"
-        onClick={() => NavigateTo('/login')}
+        onClick={() => NavigateTo(-1)}
       >
         voltar
       </button>

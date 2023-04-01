@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 import axios from 'axios';
 import Context from '../context/Context';
 
@@ -24,9 +23,23 @@ function Persons() {
       {
             persons.map((person) => {
               return (
-                <div  key={person._id}>
-               {person.nome}
-                </div>
+                <div 
+                onClick={ () => NavigateTo(`/infoPerson/${person._id}`)}
+                >
+                 <br/>
+                 <br/>
+                 {person.nome}
+                 <br/>
+                 {person.raça}
+                 <br/>
+                 <img
+                  height={ 100 }
+                  src={ person.imagem }
+                  alt={ person.name }
+                />
+                <br/>
+                <br/>
+              </div>
               );
             })
           }
