@@ -30,10 +30,20 @@ const getById = async (id) => {
   }
 };
 
+const validateLogin = (message, user) => {
+  if (message === null) {
+    return { type: 404, message: 'not found' };
+  }
+  if (message.dataValues.password !== Number(user.password)) {
+    return { type: 400, message: 'password invalid' };
+  }
+};
+
 const login = async (user) => {
   try {
-    const responseValid = await getByEmail(user.email);
-    return { type: null, message: responseValid.message };
+    const { message } = await getByEmail(user.email);
+    validateLogin(message, user);
+    return { type: null, message: message.dataValues };
   } catch (err) {
     console.log(err);
     return { type: 500, message: err.message };

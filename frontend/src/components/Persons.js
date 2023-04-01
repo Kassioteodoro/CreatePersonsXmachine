@@ -6,11 +6,10 @@ import Context from '../context/Context';
 function Persons() {
   const [persons, setPersons] = useState([])
   const NavigateTo = useNavigate();
-  const { user, setUser } = useContext(Context)
+  const { user } = useContext(Context)
   
   const fetchPersons = async () => {
     const response = await axios.get(`http://localhost:3001/person/getAll/${user.userId}`)
-    console.log(response.data);
     setPersons(response.data)
   } 
 

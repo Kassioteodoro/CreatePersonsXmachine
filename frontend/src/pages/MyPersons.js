@@ -1,8 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import Header from '../components/Header';
-import axios from 'axios';
-import Context from '../context/Context';
 import Persons from '../components/Persons';
 
 function MyPersons() {
