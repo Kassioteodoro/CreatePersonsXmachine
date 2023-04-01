@@ -1,47 +1,9 @@
 
-import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
 
-function FormsLogin() {
-  const [inputEmail, setInputEmail ] = useState("")
-  const [inputPassword, setInputPassword ] = useState(1)
-  const [inputName, setInputName ] = useState("")
-  
-  const NavigateTo = useNavigate();
-
-  const handleChange = ({ target: { name, value } }) => {
-    if ( name === "Name" ) {
-      console.log(name, value);
-      setInputName(value)
-    }
-    if ( name === "Email" ) {
-      console.log(name, value);
-      setInputEmail(value)
-    }
-    if ( name === "Password" ) {
-      console.log(name, value);
-      setInputPassword(value)
-    }
-  }
-  
-
-  const Register = async () => {
-    try {
-      const response = await axios.post('http://localhost:3000/user/register',{
-        name: inputName,
-        email: inputEmail,
-        password: inputPassword,
-      })
-      setInputName('');
-      setInputEmail('');
-      setInputPassword(0);
-      NavigateTo('/login')
-      console.log(response);
-    } catch(err) {
-      console.log(err.message);
-    }
-  }
+function FormsLogin({
+  Register, handleChange, inputName, inputEmail, inputPassword
+}) {
 
   return (
     <forms>
