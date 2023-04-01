@@ -1,6 +1,6 @@
-import {createContext} from 'react';
-import UserContext from './UserContext';
-const Context = createContext(UserContext)
+// /src/context/ThemeContext.js
+import React, { createContext } from 'react';
 
+const ThemeContext = createContext();
 
-export default Context;
+export default ThemeContext;
