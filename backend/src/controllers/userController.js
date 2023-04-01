@@ -13,10 +13,10 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { body } = req;
   const response = await UserService.login(body);
-  if (response.type === null) {
-    return res.status(200).json(response.message);
+  if (response.type) {
+    return res.status(response.type).json({ message: response.message });
   }
-  return res.status(response.type).json({ message: response.message });
+  return res.status(200).json(response.message);
 };
 
 const getById = async (req, res) => {

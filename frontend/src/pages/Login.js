@@ -1,14 +1,12 @@
 
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import Context from '../context/Context';
 import axios from 'axios';
 import FormsLogin from '../components/FormsLogin';
 
 function Login() {
   const [inputEmail, setInputEmail ] = useState("")
   const [inputPassword, setInputPassword ] = useState(1)
-  const { setUser } = useContext(Context);
   
   const NavigateTo = useNavigate();
   
@@ -27,10 +25,11 @@ function Login() {
         email: inputEmail,
         password: inputPassword,
       })
+      console.log(response);
       if (response.data) {
         setInputEmail('');
         setInputPassword(0);
-       setUser({userId: response.data.id, userName: response.data.name})
+        localStorage.setItem('user', JSON.stringify({userId: response.data.id, userName: response.data.name}));
         return NavigateTo("/myPersons")
       } 
       console.log("Error");

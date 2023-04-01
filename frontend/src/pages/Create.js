@@ -23,7 +23,9 @@ const [disadvantage, setdisadvantage ] = useState('')
 const [image, setimage ] = useState('')
 const [history, sethistory ] = useState('')
 const [equipments, setequipments ] = useState('')
+  
   const NavigateTo = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'));
 
   const handleChange = ({ target: { value } }) => {
     switch (value) {
@@ -110,27 +112,27 @@ const create = async () => {
   try {
     const response = await axios.post("http://localhost:3001/person",
       {
-        userId: 1,
-        nome: "Ketellyn",
-        raça: "elfo",
-        idade: 100000,
-        vida: 10000,
-        magia: 1000,
-        xp: 10000,
-        imagem: "https://i0.wp.com/orbedosdragoes.com/wp-content/uploads/2022/01/PF2-elfo-zoom.png?resize=692%2C490&ssl=1",
-        historia: "ela e uma bom Elfa",
+        userId: user.userId,
+        nome: name,
+        raça: race,
+        idade: age,
+        vida: life,
+        magia: magicPoint,
+        xp: XP,
+        imagem: image,
+        historia: history,
         atributos: {
-          força: 0,
-          habilidade: 0,
-          resistencia: 0,
-          inteligencia: 0,
-          armadura: 0,
+          força: strength,
+          habilidade: ability,
+          resistencia: resistency,
+          inteligencia: intelection,
+          armadura: armor,
         },
-        habilidades: [],
-        magias: [],
-        vantagens: [],
-        desvantagens: [],
-        equipamento: [],
+        habilidades: skills,
+        magias: magicSkills,
+        vantagens: benefits,
+        desvantagens: disadvantage,
+        equipamento: equipments,
       }
     )
     console.log("response", response);

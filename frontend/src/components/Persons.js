@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Context from '../context/Context';
 
 function Persons() {
   const [persons, setPersons] = useState([])
   const NavigateTo = useNavigate();
-  const { user } = useContext(Context)
+  const user = JSON.parse(localStorage.getItem('user'));
   
   const fetchPersons = async () => {
     const response = await axios.get(`http://localhost:3001/person/getAll/${user.userId}`)
