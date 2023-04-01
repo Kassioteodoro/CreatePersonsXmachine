@@ -1,15 +1,5 @@
 const { User } = require('../database/MySQLDB/models');
 
-const register = async (user) => {
-  try {
-    await User.create(user);
-    return { type: null, message: 'created sucess' };
-  } catch (err) {
-    console.log(err);
-    return { type: 500, message: err.message };
-  }
-};
-
 const getByEmail = async (email) => {
   try {
     const response = await User.findOne({ where: { email } });
@@ -36,6 +26,20 @@ const validateLogin = (message, user) => {
   }
   if (message.dataValues.password !== Number(user.password)) {
     return { type: 400, message: 'password invalid' };
+  }
+};
+
+const register = async (user) => {
+  try {
+    const { message } = await getByEmail(user.email);
+    if (message !== null) {
+    return { type: 400, message: 'email exist' };
+    }
+    await User.create(user);
+    return { type: null, message: 'created sucess' };
+  } catch (err) {
+    console.log(err);
+    return { type: 500, message: err.message };
   }
 };
 
