@@ -12,12 +12,11 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   const { body } = req;
-  try {
-    const response = await UserService.login(body);
-    return res.status(200).json(response.message);
-  } catch (err) {
-    return res.status(500).json({ message: err.message });
+  const response = await UserService.login(body);
+  if (response.type) {
+    return res.status(response.type).json({ message: response.message });
   }
+  return res.status(200).json(response.message);
 };
 
 const getById = async (req, res) => {
