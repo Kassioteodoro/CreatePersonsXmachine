@@ -29,6 +29,7 @@ const validateLogin = (message, user) => {
     console.log('user', user.password);
     return { type: 400, message: 'password invalid' };
   }
+  return { type: null };
 };
 
 const register = async (user) => {

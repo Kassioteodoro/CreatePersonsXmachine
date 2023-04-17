@@ -27,60 +27,61 @@ const [equipments, setequipments ] = useState('')
   const NavigateTo = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
 
-  const handleChange = ({ target: { value } }) => {
-    switch (value) {
-  case name === "name" :
+  const handleChange = ({ target: { value, name } }) => {
+  console.log(value);
+      switch (name) {
+  case "name" :
     setname(value)
     break;
-  case age === "age" :
+  case "age" :
     setage(value)
     break;
-  case race === "race" : 
+  case "race" : 
     setrace(value)
     break;
-  case life === "life" : 
+  case "life" : 
     setlife(value)
     break;
-  case magicPoint === "magicPoint" : 
+  case "magicPoint" : 
     setmagicPoint(value)
     break;
-  case XP === "XP" : 
+  case "XP" : 
     setXP(value)
     break;
-  case strength === "strength" : 
+  case "strength" : 
     setstrength(value)
     break;
-  case ability === "ability" : 
+  case "ability" : 
     setability(value)
     break;
-  case resistency === "resistency" : 
+  case "resistency" : 
     setresistency(value)
     break;
-  case armor === "armor" : 
+  case "armor" : 
     setarmor(value)
     break;
-  case intelection === "intelection" : 
+  case "intelection" : 
     setintelection(value)
     break;
-  case skills === "skills" : 
+  case "skills" : 
     setskills(value)
     break;
-  case magicSkills === "magicSkills" : 
+  case "magicSkills" : 
     setmagicSkills(value)
     break;
-  case benefits === "benefits" : 
+  case "benefits" : 
     setbenefits(value)
     break;
-  case disadvantage === "disadvantage" : 
+  case "disadvantage" : 
     setdisadvantage(value)
     break;
-  case image === "image" : 
+  case "image" : 
     setimage(value)
     break;
-  case history === "history" : 
+  case "history" : 
     sethistory(value)
     break;
-  case equipments === "equipments" : 
+  case "equipments" : 
     setequipments(value)
     break;
   }

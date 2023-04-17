@@ -9,6 +9,7 @@ function Persons() {
   
   const fetchPersons = async () => {
     const response = await axios.get(`http://localhost:3001/person/getAll/${user.userId}`)
+    console.log(response.data);
     setPersons(response.data)
   } 
 
@@ -22,7 +23,7 @@ function Persons() {
             persons.map((person) => {
               return (
                 <div 
-                onClick={ () => NavigateTo(`/infoPerson/${person._id}`)}
+                onClick={ () => NavigateTo(`/viewPerson/${person._id}`)}
                 >
                  <br/>
                  <br/>

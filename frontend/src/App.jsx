@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Login from './pages/Login'
 import Register from './pages/Register'
 import MyPersons from './pages/MyPersons'
 import Create from './pages/Create';
+import ViewPerson from './pages/ViewPerson';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
           <Route 
             path="/create"
             element={ <Create/>}
+          />
+          <Route 
+            path="/viewPerson/:id"
+            element={ <ViewPerson/>}
           />
         </Routes>
     </div>
