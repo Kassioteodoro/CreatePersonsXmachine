@@ -48,7 +48,7 @@ function Login() {
       />
       <button
         type="button"
-        onClick={() => console.log("em breve")}
+        onClick={() => NavigateTo("/createFast")}
       >
         fast create
       </button>

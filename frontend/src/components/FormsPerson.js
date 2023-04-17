@@ -1,25 +1,17 @@
-
-import React, {useState} from 'react';
+import React from 'react';
 
 function FormsPerson({
-  handleChange,create,
+  handleChange,create, addList,
   name, age, race, life,magicPoint,
   XP, strength, ability, resistency,armor,
   intelection, skills, magicSkills, benefits, disadvantage,
-  image, history, equipments }) {
-
-    const [equipmentList, setEquipmentList] = useState('')
-
-    const addListEquipament = (e) => {
-      equipmentList === '' ? setEquipmentList(equipments) : setEquipmentList((Lolvalue) => `${Lolvalue}, ${equipments}`)
-      console.log(e);
-      console.log(equipments);
-      console.log(equipmentList);
-    }
+  image, history, equipments, PrevEquipment, prevSkills,
+  prevBenefits, prevDisadvantage, prevMagicSkills }) {
+  
   return (
     <forms>
       <label>
-      name
+      name:
         <input 
       type="text"
       name='name'
@@ -28,7 +20,7 @@ function FormsPerson({
       />
       </label>
       <label>
-
+      raça:
       <input 
       type="text"
       name='race'
@@ -37,34 +29,34 @@ function FormsPerson({
       />
       </label>
       <label>
-
+      idade:
       <input 
-      type="text"
+      type="number"
       name='age'
       value={age}
       onChange={handleChange} 
       />
       </label>
       <label>
-
+      vida: 
       <input 
-      type="text"
+      type="number"
       name='life'
       value={life}
       onChange={handleChange} 
       />
       </label>
       <label>
-
+      magicPoints: 
       <input 
-      type="text"
+      type="number"
       name='magicPoint'
       value={magicPoint}
       onChange={handleChange} 
       />
       </label>
       <label>
-
+      XP: 
       <input 
       type="number"
       name='XP'
@@ -73,16 +65,16 @@ function FormsPerson({
       />
       </label>
       <label>
-
+      força:
       <input 
-      type="text"
+      type="number"
       name='strength'
       value={strength}
       onChange={handleChange} 
       />
       </label>
       <label>
-
+      habilidade:
       <input 
       type="number"
       name='ability'
@@ -92,17 +84,16 @@ function FormsPerson({
       </label>
       
       <label>
-
+      resistencia:
       <input 
-      type="text"
+      type="number"
       name='resistency'
       value={resistency}
       onChange={handleChange} 
       />
       </label>
       <label>
-
-
+      armadura:
       <input 
       type="number"
       name='armor'
@@ -111,61 +102,105 @@ function FormsPerson({
       />
       </label>
       <label>
-        
+      intelection:
       <input 
-      type="text"
+      type="number"
       name='intelection'
       value={intelection}
       onChange={handleChange} 
       />
       </label>
       <label>
-
+      skills:
+      <button 
+      name='skills'
+      onClick={addList}
+      >
+        add
+      </button>
       <input 
-      type="number"
+      type="text"
+      name='prevSkills'
+      value={prevSkills}
+      onChange={handleChange}
+      />
+      <input 
+      type="text"
       name='skills'
       value={skills}
-      onChange={handleChange}
       />
       </label>
       <label>
-
+      magicSkills
+      <button 
+      name='magicSkills'
+      onClick={addList}
+      >
+        add
+      </button>
+      <input 
+      type="text"
+      name='prevMagicSkills'
+      value={prevMagicSkills}
+      onChange={handleChange} 
+      />
       <input 
       type="text"
       name='magicSkills'
       value={magicSkills}
-      onChange={handleChange} 
       />
       </label>
       <label>
-
-      <input 
-      type="number"
+      benefits:
+      <button 
       name='benefits'
-      value={benefits}
+      onClick={addList}
+      >
+        add
+      </button>
+      <input 
+      type="text"
+      name='prevBenefits'
+      value={prevBenefits}
       onChange={handleChange}
       />
+      <input 
+      type="text"
+      name='benefits'
+      value={benefits}
+      />
       </label>
       <label>
-
+        disadvantage:
+      <button 
+      name='disadvantage'
+      onClick={addList}
+      >
+        add
+      </button>
+      <input 
+      type="text"
+      name='prevDisadvantage'
+      value={prevDisadvantage}
+      onChange={handleChange} 
+      />
       <input 
       type="text"
       name='disadvantage'
       value={disadvantage}
-      onChange={handleChange} 
       />
       </label>
       <label>
-
+      Image:
       <input 
-      type="number"
+      type="text"
       name='image'
       value={image}
       onChange={handleChange}
       />
       </label>
       <label>
-
+      history:
       <input 
       type="text"
       name='history'
@@ -176,30 +211,24 @@ function FormsPerson({
       <label>
         Equipamentos
       <button 
-      onClick={addListEquipament}
+      name='equipment'
+      onClick={addList}
       >
         add
       </button>
       <input 
       type="text"
-      name='equipments'
-      value={equipments}
+      name='prevEquipment'
+      value={PrevEquipment}
       onChange={handleChange}
       />
       <input 
       type="test"
-      name="equipmentList"
-      value={equipmentList}
+      name="equipments"
+      value={equipments}
       width={300}
       />
       </label>
-      <br/>
-       <button
-      type="button"
-      onClick={ create }
-      >
-        Create
-      </button>
     </forms>
   );
 }

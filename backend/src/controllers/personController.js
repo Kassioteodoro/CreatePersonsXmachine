@@ -34,6 +34,9 @@ const update = async (req, res) => {
   const { body, params: { id } } = req;
   try {
     const response = await PersonService.update(body, id);
+    if (response.status) {
+    return res.status(500).json({ message: response.message });
+    }
     return res.status(200).json(response.message);
   } catch (err) {
     return res.status(500).json({ message: err.message });

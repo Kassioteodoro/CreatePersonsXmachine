@@ -22,15 +22,40 @@ const [benefits, setbenefits ] = useState('')
 const [disadvantage, setdisadvantage ] = useState('')
 const [image, setimage ] = useState('')
 const [history, sethistory ] = useState('')
-const [equipments, setequipments ] = useState('')
-  
+const [equipments, setEquipments ] = useState('')
+const [prevEquipment, setPrevEquipment ] = useState('')
+const [prevSkills, setPrevSkills ] = useState('')
+const [prevMagicSkills, setPrevMagicSkills ] = useState('')
+const [prevBenefits, setPrevBenefits ] = useState('')
+const [prevDisadvantage, setPrevDisadvantage ] = useState('')
+
+const addList = ({ target: { name } }) => {
+  switch(name) {
+    case "equipment":
+      equipments === '' ? setEquipments(prevEquipment) : setEquipments((prev) => ` ${prev}, ${prevEquipment}`)
+      break;
+    case "skills":
+        skills === '' ? setskills(prevSkills) : setskills((prev) => ` ${prev}, ${prevSkills}`)
+      break;
+    case "magicSkills":
+          magicSkills === '' ? setmagicSkills(prevMagicSkills) : setmagicSkills((prev) => ` ${prev}, ${prevMagicSkills}`)
+      break;
+    case "benefits":
+          benefits === '' ? setbenefits(prevBenefits) : setbenefits((prev) => ` ${prev}, ${prevBenefits}`)
+      break;
+    case "disadvantage":
+          disadvantage === '' ? setdisadvantage(prevDisadvantage) : setdisadvantage((prev) => ` ${prev}, ${prevDisadvantage}`)
+      break;  
+  }
+}
+
   const NavigateTo = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
 
   const handleChange = ({ target: { value, name } }) => {
-  console.log(value);
-      switch (name) {
-  case "name" :
+    console.log(value);
+    switch (name) {
+      case "name" :
     setname(value)
     break;
   case "age" :
@@ -63,52 +88,30 @@ const [equipments, setequipments ] = useState('')
   case "intelection" : 
     setintelection(value)
     break;
-  case "skills" : 
-    setskills(value)
-    break;
-  case "magicSkills" : 
-    setmagicSkills(value)
-    break;
-  case "benefits" : 
-    setbenefits(value)
-    break;
-  case "disadvantage" : 
-    setdisadvantage(value)
-    break;
   case "image" : 
     setimage(value)
     break;
-  case "history" : 
+    case "history" : 
     sethistory(value)
     break;
-  case "equipments" : 
-    setequipments(value)
+    case "prevEquipment":
+      setPrevEquipment(value)
+    break;
+    case "prevDisadvantage":
+      setPrevDisadvantage(value)
+    break;
+    case "prevBenefits":
+      setPrevBenefits(value)
+    break;
+    case "prevMagicSkills":
+      setPrevMagicSkills(value)
+    break;
+    case "prevSkills":
+      setPrevSkills(value)
     break;
   }
 }
-// {
-//   "userId": 1,
-//   "nome": "Ketellyn",
-//   "raça": "elfo",
-//   "idade": 100000,
-//   "vida": 10000,
-//   "magia": 1000,
-//   "xp": 10000,
-//   "imagem": "https://i0.wp.com/orbedosdragoes.com/wp-content/uploads/2022/01/PF2-elfo-zoom.png?resize=692%2C490&ssl=1",
-//   "historia": "ela e uma bom Elfa",
-//   "atributos": {
-//     "força": 0,
-//     "habilidade": 0,
-//     "resistencia": 0,
-//     "inteligencia": 0,
-//     "armadura": 0
-//   },
-//   "habilidades": [],
-//   "magias": [],
-//   "vantagens": [],
-//   "desvantagens": [],
-//   "equipamento": []
-// }
+
 const create = async () => {
   try {
     const response = await axios.post("http://localhost:3001/person",
@@ -146,7 +149,7 @@ const create = async () => {
       <Header />
       <FormsPerson 
   handleChange={handleChange}
-  create={create}
+  addList={addList}
   name={name} 
   age={age}
   race={race}
@@ -164,7 +167,20 @@ const create = async () => {
   disadvantage={disadvantage}
   image={image}
   history={history}
-  equipments={equipments} />
+  equipments={equipments}
+  />
+  <button
+      type="button"
+      onClick={ create }
+      >
+        Create
+      </button>
+   <button
+        type="button"
+        onClick={() => NavigateTo(-1)}
+      >
+        voltar
+      </button>
     </div>
   );
 }

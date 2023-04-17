@@ -9,33 +9,30 @@ function InfoPerson({
     
   return (
     <div>
-        <h1>{name}</h1>
+        <h1>nome: {name}</h1>
         <br/>
-        <h1>{image}</h1>
-        <h1>{age}</h1>
-        <h1>{race}</h1>
-        <h1>{life}</h1>
-        <h1>{magicPoint}</h1>
-        <h1>{XP}</h1>
-        <h1>{strength}</h1>
-        <h1>{ability}</h1>
-        <h1>{resistency}</h1>
-        <h1>{armor}</h1>
-        <h1>{intelection}</h1>
-        <h1>{skills}</h1>
-        <h1>{name}</h1>
-        <h1>{magicSkills}</h1>
-        <h1>{benefits}</h1>
-        <h1>{disadvantage}</h1>
-        <h1>{equipments}</h1>
-        <h1>{history}</h1>
         <img
-                  height={ 100 }
+                  height={ 300 }
+                  width={ 200 }
                   src={ image }
                   alt={ name }
                 />
-        <h1>{history}</h1>
-        <h1>{equipments}</h1>
+        <h1>raça: {race}</h1>
+        <h1>idade: {age}</h1>
+        <h1>vida: {life}</h1>
+        <h1>magia: {magicPoint}</h1>
+        <h1>XP: {XP}</h1>
+        <h1>força: {strength}</h1>
+        <h1>habilidade: {ability}</h1>
+        <h1>resistencia: {resistency}</h1>
+        <h1>armadura: {armor}</h1>
+        <h1>inteligencia: {intelection}</h1>
+        <h1>habilidades: {skills}</h1>
+        <h1>magias: {magicSkills}</h1>
+        <h1>vantagens: {benefits}</h1>
+        <h1>desvantagens: {disadvantage}</h1>
+        <h1>equipamento: {equipments}</h1>
+        <h1>historia: {history}</h1>
     </div>
   );
 }

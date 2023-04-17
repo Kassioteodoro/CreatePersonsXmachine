@@ -5,6 +5,8 @@ import Register from './pages/Register'
 import MyPersons from './pages/MyPersons'
 import Create from './pages/Create';
 import ViewPerson from './pages/ViewPerson';
+import FastPerson from './pages/FastPerson';
+import EditorPerson from './pages/EditorPerson';
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
             element={ <Register/>}
           />
           <Route 
+            path="/createFast"
+            element={ <FastPerson/>}
+          />
+          <Route 
             path="/myPersons"
             element={ <MyPersons/>}
           />
@@ -32,6 +38,10 @@ function App() {
           <Route 
             path="/viewPerson/:id"
             element={ <ViewPerson/>}
+          />
+          <Route 
+            path="/editorPerson/:id"
+            element={ <EditorPerson/>}
           />
         </Routes>
     </div>
