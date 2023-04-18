@@ -20,6 +20,7 @@ function Persons() {
   return (
     <div>
       {
+        persons.length > 0 ?
             persons.map((person) => {
               return (
                 <div 
@@ -41,6 +42,7 @@ function Persons() {
               </div>
               );
             })
+          : "not persons"
           }
     </div>
   );

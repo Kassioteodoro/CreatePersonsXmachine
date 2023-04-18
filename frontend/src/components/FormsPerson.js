@@ -1,11 +1,11 @@
 import React from 'react';
 
 function FormsPerson({
-  handleChange,create, addList,
+  handleChange, addList,
   name, age, race, life,magicPoint,
   XP, strength, ability, resistency,armor,
   intelection, skills, magicSkills, benefits, disadvantage,
-  image, history, equipments, PrevEquipment, prevSkills,
+  image, history, equipments, prevEquipment, prevSkills,
   prevBenefits, prevDisadvantage, prevMagicSkills }) {
   
   return (
@@ -127,7 +127,7 @@ function FormsPerson({
       <input 
       type="text"
       name='skills'
-      value={skills}
+      value={skills.join(', ')}
       />
       </label>
       <label>
@@ -147,7 +147,7 @@ function FormsPerson({
       <input 
       type="text"
       name='magicSkills'
-      value={magicSkills}
+      value={magicSkills.join(', ')}
       />
       </label>
       <label>
@@ -167,7 +167,7 @@ function FormsPerson({
       <input 
       type="text"
       name='benefits'
-      value={benefits}
+      value={benefits.join(', ')}
       />
       </label>
       <label>
@@ -187,7 +187,7 @@ function FormsPerson({
       <input 
       type="text"
       name='disadvantage'
-      value={disadvantage}
+      value={disadvantage.join(', ')}
       />
       </label>
       <label>
@@ -219,13 +219,13 @@ function FormsPerson({
       <input 
       type="text"
       name='prevEquipment'
-      value={PrevEquipment}
+      value={prevEquipment}
       onChange={handleChange}
       />
       <input 
       type="test"
       name="equipments"
-      value={equipments}
+      value={equipments.join(', ')}
       width={300}
       />
       </label>

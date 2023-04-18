@@ -27,11 +27,11 @@ function InfoPerson({
         <h1>resistencia: {resistency}</h1>
         <h1>armadura: {armor}</h1>
         <h1>inteligencia: {intelection}</h1>
-        <h1>habilidades: {skills}</h1>
-        <h1>magias: {magicSkills}</h1>
-        <h1>vantagens: {benefits}</h1>
-        <h1>desvantagens: {disadvantage}</h1>
-        <h1>equipamento: {equipments}</h1>
+        <h1>habilidades: {skills.join(', ')}</h1>
+        <h1>magias: {magicSkills.join(', ')}</h1>
+        <h1>vantagens: {benefits.join(', ')}</h1>
+        <h1>desvantagens: {disadvantage.join(', ')}</h1>
+        <h1>equipamento: {equipments.join(', ')}</h1>
         <h1>historia: {history}</h1>
     </div>
   );

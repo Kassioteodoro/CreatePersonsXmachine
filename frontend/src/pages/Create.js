@@ -16,13 +16,13 @@ const [ability, setability ] = useState('')
 const [resistency, setresistency ] = useState('')
 const [armor, setarmor ] = useState('')
 const [intelection, setintelection ] = useState('')
-const [skills, setskills ] = useState('')
-const [magicSkills, setmagicSkills ] = useState('')
-const [benefits, setbenefits ] = useState('')
-const [disadvantage, setdisadvantage ] = useState('')
+const [skills, setskills ] = useState([])
+const [magicSkills, setmagicSkills ] = useState([])
+const [benefits, setbenefits ] = useState([])
+const [disadvantage, setdisadvantage ] = useState([])
 const [image, setimage ] = useState('')
 const [history, sethistory ] = useState('')
-const [equipments, setEquipments ] = useState('')
+const [equipments, setEquipments ] = useState([])
 const [prevEquipment, setPrevEquipment ] = useState('')
 const [prevSkills, setPrevSkills ] = useState('')
 const [prevMagicSkills, setPrevMagicSkills ] = useState('')
@@ -32,19 +32,29 @@ const [prevDisadvantage, setPrevDisadvantage ] = useState('')
 const addList = ({ target: { name } }) => {
   switch(name) {
     case "equipment":
-      equipments === '' ? setEquipments(prevEquipment) : setEquipments((prev) => ` ${prev}, ${prevEquipment}`)
+      if (prevEquipment !== '') 
+        setEquipments((prev) => [...prev, prevEquipment])
+        setPrevEquipment('')
       break;
     case "skills":
-        skills === '' ? setskills(prevSkills) : setskills((prev) => ` ${prev}, ${prevSkills}`)
+      if (prevSkills !== '') 
+        setskills((prev) => [...prev, prevSkills])
+        setPrevSkills('')
       break;
     case "magicSkills":
-          magicSkills === '' ? setmagicSkills(prevMagicSkills) : setmagicSkills((prev) => ` ${prev}, ${prevMagicSkills}`)
+      if (prevMagicSkills !== '') 
+        setmagicSkills((prev) => [...prev, prevMagicSkills])
+        setPrevMagicSkills('')
       break;
     case "benefits":
-          benefits === '' ? setbenefits(prevBenefits) : setbenefits((prev) => ` ${prev}, ${prevBenefits}`)
+      if (prevBenefits !== '') 
+        setbenefits((prev) => [...prev, prevBenefits])
+        setPrevBenefits('')
       break;
     case "disadvantage":
-          disadvantage === '' ? setdisadvantage(prevDisadvantage) : setdisadvantage((prev) => ` ${prev}, ${prevDisadvantage}`)
+      if (prevDisadvantage !== '') 
+        setdisadvantage((prev) => [...prev, prevDisadvantage])
+        setPrevDisadvantage('')
       break;  
   }
 }
@@ -140,6 +150,7 @@ const create = async () => {
       }
     )
     console.log("response", response);
+    NavigateTo("/myPersons")
   } catch(err) {
     console.log(err.message);
   }
@@ -168,6 +179,11 @@ const create = async () => {
   image={image}
   history={history}
   equipments={equipments}
+  prevSkills={prevSkills}
+  prevMagicSkills={prevMagicSkills}
+  prevBenefits={prevBenefits}
+  prevDisadvantage={prevDisadvantage}
+  prevEquipment={prevEquipment}
   />
   <button
       type="button"

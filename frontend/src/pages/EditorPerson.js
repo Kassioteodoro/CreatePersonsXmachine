@@ -4,7 +4,7 @@ import FormsPerson from '../components/FormsPerson';
 import axios from 'axios';
 
 function EditorPerson() {
-const [name, setname ] = useState('')
+const [name, setname ] = useState(null)
 const [age, setage ] = useState('')
 const [race, setrace ] = useState('')
 const [life, setlife ] = useState('')
@@ -15,13 +15,13 @@ const [ability, setability ] = useState('')
 const [resistency, setresistency ] = useState('')
 const [armor, setarmor ] = useState('')
 const [intelection, setintelection ] = useState('')
-const [skills, setskills ] = useState('')
-const [magicSkills, setmagicSkills ] = useState('')
-const [benefits, setbenefits ] = useState('')
-const [disadvantage, setdisadvantage ] = useState('')
+const [skills, setskills ] = useState([])
+const [magicSkills, setmagicSkills ] = useState([])
+const [benefits, setbenefits ] = useState([])
+const [disadvantage, setdisadvantage ] = useState([])
 const [image, setimage ] = useState('')
 const [history, sethistory ] = useState('')
-const [equipments, setEquipments ] = useState('')
+const [equipments, setEquipments ] = useState([])
 const [prevEquipment, setPrevEquipment ] = useState('')
 const [prevSkills, setPrevSkills ] = useState('')
 const [prevMagicSkills, setPrevMagicSkills ] = useState('')
@@ -44,13 +44,13 @@ const fetchPerson = async () => {
   setability(response.data.atributos.habilidade)
   setresistency(response.data.atributos.resistencia)
   setintelection(response.data.atributos.inteligencia)
-  setskills(response.data.habilidades[0])
-  setmagicSkills(response.data.magias[0])
-  setbenefits(response.data.vantagens[0])
-  setdisadvantage(response.data.desvantagens[0])
+  setskills(response.data.habilidades)
+  setmagicSkills(response.data.magias)
+  setbenefits(response.data.vantagens)
+  setdisadvantage(response.data.desvantagens)
   setimage(response.data.imagem)
   sethistory(response.data.historia)
-  setEquipments(response.data.equipamento[0])
+  setEquipments(response.data.equipamento)
 } 
 
 useEffect(() => {
@@ -61,22 +61,33 @@ useEffect(() => {
 const addList = ({ target: { name } }) => {
   switch(name) {
     case "equipment":
-      equipments === '' ? setEquipments(prevEquipment) : setEquipments((prev) => ` ${prev}, ${prevEquipment}`)
+      if (prevEquipment !== '') 
+        setEquipments((prev) => [...prev, prevEquipment])
+        setPrevEquipment('')
       break;
     case "skills":
-        skills === '' ? setskills(prevSkills) : setskills((prev) => ` ${prev}, ${prevSkills}`)
+      if (prevSkills !== '') 
+        setskills((prev) => [...prev, prevSkills])
+        setPrevSkills('')
       break;
     case "magicSkills":
-          magicSkills === '' ? setmagicSkills(prevMagicSkills) : setmagicSkills((prev) => ` ${prev}, ${prevMagicSkills}`)
+      if (prevMagicSkills !== '') 
+        setmagicSkills((prev) => [...prev, prevMagicSkills])
+        setPrevMagicSkills('')
       break;
     case "benefits":
-          benefits === '' ? setbenefits(prevBenefits) : setbenefits((prev) => ` ${prev}, ${prevBenefits}`)
+      if (prevBenefits !== '') 
+        setbenefits((prev) => [...prev, prevBenefits])
+        setPrevBenefits('')
       break;
     case "disadvantage":
-          disadvantage === '' ? setdisadvantage(prevDisadvantage) : setdisadvantage((prev) => ` ${prev}, ${prevDisadvantage}`)
+      if (prevDisadvantage !== '') 
+        setdisadvantage((prev) => [...prev, prevDisadvantage])
+        setPrevDisadvantage('')
       break;  
   }
 }
+
 
   const NavigateTo = useNavigate();
 
@@ -179,9 +190,11 @@ const addList = ({ target: { name } }) => {
       <h1>
       EDITOR
       </h1>
-      <FormsPerson 
-  handleChange={handleChange}
-  addList={addList}
+      {
+        name !== null ? 
+        <FormsPerson 
+        handleChange={handleChange}
+        addList={addList}
   name={name} 
   age={age}
   race={race}
@@ -200,7 +213,14 @@ const addList = ({ target: { name } }) => {
   image={image}
   history={history}
   equipments={equipments}
+  prevSkills={prevSkills}
+  prevMagicSkills={prevMagicSkills}
+  prevBenefits={prevBenefits}
+  prevDisadvantage={prevDisadvantage}
+  prevEquipment={prevEquipment}
   />
+  : null
+}
     <button
         type="button"
         onClick={editor}
