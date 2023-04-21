@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FormsLogin from '../components/FormsLogin';
+import logo from '../images/logo.png';
 
 function Login() {
   const [inputEmail, setInputEmail ] = useState("")
@@ -40,8 +41,13 @@ function Login() {
 
   return (
     <div className={ styles.loginAndRegister}>
+       <img
+                  height={ 300 }
+                  width={ 200 }
+                  src={logo}
+                  // alt={ name }
+                  />
       <div className={ styles.containerloginAndRegister}>
-
       <FormsLogin 
         handleChange={handleChange}
         inputEmail={inputEmail}

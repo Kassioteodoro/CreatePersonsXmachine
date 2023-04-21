@@ -31,7 +31,6 @@ function InfoPerson({
       <h1>Intelection: {intelection}</h1>
       </div>
       </div>
-
         <img
                   height={ 300 }
                   width={ 200 }
