@@ -88,6 +88,37 @@ const addList = ({ target: { name } }) => {
       break;  
   }
 }
+
+const removeList = ({ target: { name } }) => {
+  switch(name) {
+    case "equipment":
+      if (prevEquipment !== '') 
+        setEquipments((prev) => prev.filter((value) => value !== prevEquipment))
+        setPrevEquipment('')
+      break;
+    case "skills":
+      if (prevSkills !== '') 
+        setskills((prev) => prev.filter((value) => value !== prevSkills))
+        setPrevSkills('')
+      break;
+    case "magicSkills":
+      if (prevMagicSkills !== '') 
+        setmagicSkills((prev) => prev.filter((value) => value !== prevMagicSkills))
+        setPrevMagicSkills('')
+      break;
+    case "benefits":
+      if (prevBenefits !== '') 
+        setbenefits((prev) => prev.filter((value) => value !== prevBenefits))
+        setPrevBenefits('')
+      break;
+    case "disadvantage":
+      if (prevDisadvantage !== '') 
+        setdisadvantage((prev) => prev.filter((value) => value !== prevDisadvantage))
+        setPrevDisadvantage('')
+      break;  
+  }
+}
+
 const validHistory = history.length <= 84 
 const validEquipament = equipments.length <= 9 
 const validSkills = skills.length <= 9 
@@ -222,6 +253,7 @@ const validButton = () => {
         <FormsPerson 
         handleChange={handleChange}
         addList={addList}
+        removeList={removeList}
   name={name} 
   age={age}
   race={race}
