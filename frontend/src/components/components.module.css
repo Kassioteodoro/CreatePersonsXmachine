@@ -1,0 +1,134 @@
+.FormsLoginAndRegister {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.FormsPerson {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.PersonList {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.CardPerson {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.Header {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+.containerHeaderButton {
+  margin: 10px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  /* background-color: blue; */
+}
+
+.container2 {
+  margin-bottom: 10px;
+}
+
+.containerAbilit {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content:space-around;
+}
+
+.container1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+  margin-bottom: 10px;
+  justify-content:space-around;
+}
+
+.container3 {
+  display: flex;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;;
+  align-items: start;
+  justify-content:space-between;
+}
+.labelHistory {
+  display: flex;
+  flex-direction: column;;
+  align-items: start;
+  justify-content:space-between;
+}
+
+.InfoPerson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+  background-color: blue;
+}
+
+
+
+.inputLoginAndRegister {
+  width: 280px;
+  height: 40px;
+}
+.inputName {
+  width: 180px;
+  height: 20px;
+}
+.inputRace {
+  width: 100px;
+  height: 20px;
+}
+.inputValue1 {
+  width: 40px;
+  height: 20px;
+}
+.button1 {
+  width: 20px;
+  height: 20px;
+}
+.button2 {
+  padding: 4%;
+}
+.inputValue2 {
+  width: 90px;
+  height: 20px;
+}
+.inputValue3 {
+  width: 160px;
+  height: 60px;
+}
+.inputValueHistory {
+  width: 160px;
+  height: 120px;
+}
+.inputValueImage {
+  border-color: black;
+  width: 160px;
+  height: 120px;
+}

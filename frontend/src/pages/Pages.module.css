@@ -1,0 +1,54 @@
+
+.loginAndRegister {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.FastPerson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.CreatePerson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.containerloginAndRegister {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.containerButton {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 80px;
+  height: 30px;
+}
+
+.HeaderViewPerson {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.button2 {
+  padding: 2%;
+}

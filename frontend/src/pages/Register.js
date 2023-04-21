@@ -1,11 +1,12 @@
 import React, { useState} from 'react';
+import styles from './Pages.module.css'
 import { useNavigate } from 'react-router-dom';
 import FormsRegister from '../components/FormsRegister';
 import axios from 'axios';
 
-function Login() {
+function Register() {
   const [inputEmail, setInputEmail ] = useState("")
-  const [inputPassword, setInputPassword ] = useState(1)
+  const [inputPassword, setInputPassword ] = useState('')
   const [inputName, setInputName ] = useState("")
   
   const NavigateTo = useNavigate();
@@ -43,22 +44,33 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className={styles.loginAndRegister}>
+      <div className={styles.containerloginAndRegister}>
       <FormsRegister 
       inputEmail={inputEmail}
       inputName={inputName}
       inputPassword={inputPassword}
-      Register={Register}
       handleChange={handleChange}
       />
+      <div className={styles.containerButton}>
+       <button
+      className={styles.button}
+      type="button"
+      onClick={ Register }
+      >
+        register
+      </button>
       <button
-        type="button"
-        onClick={() => NavigateTo(-1)}
+      className={styles.button}
+      type="button"
+      onClick={() => NavigateTo(-1)}
       >
         voltar
       </button>
+        </div>
+        </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;

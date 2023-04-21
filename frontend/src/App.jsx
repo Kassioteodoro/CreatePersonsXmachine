@@ -6,6 +6,7 @@ import MyPersons from './pages/MyPersons'
 import Create from './pages/Create';
 import ViewPerson from './pages/ViewPerson';
 import FastPerson from './pages/FastPerson';
+import './index.css';
 import EditorPerson from './pages/EditorPerson';
 
 function App() {
@@ -38,11 +39,11 @@ function App() {
           <Route 
             path="/viewPerson/:id"
             element={ <ViewPerson/>}
-          />
+            />
           <Route 
             path="/editorPerson/:id"
             element={ <EditorPerson/>}
-          />
+            />
         </Routes>
     </div>
   );

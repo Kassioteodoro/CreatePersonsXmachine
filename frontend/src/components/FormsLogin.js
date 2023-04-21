@@ -1,30 +1,29 @@
-
+import styles from "./components.module.css"
 import React from 'react';
 
 function FormsLogin({
-  handleChange,login,
+  handleChange,
   inputEmail, inputPassword,}) {
 
   return (
-    <forms>
+    <forms className={styles.FormsLoginAndRegister}>
         <input 
+        className={styles.inputLoginAndRegister}
       type="text"
       name='Email'
       value={inputEmail}
       onChange={handleChange} 
+      placeholder="Email..."
       />
       <input 
-      type="number"
+        className={styles.inputLoginAndRegister}
+      type="text"
       name='Password'
       value={inputPassword}
       onChange={handleChange}
+      placeholder="Password..."
       />
-       <button
-      type="button"
-      onClick={ login }
-      >
-        login
-      </button>
+     
     </forms>
   );
 }

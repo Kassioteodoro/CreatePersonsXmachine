@@ -3,19 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import FormsPerson from '../components/FormsPerson';
 import axios from 'axios';
+import styles from './Pages.module.css'
 
 function Create() {
 const [name, setname ] = useState('')
-const [age, setage ] = useState('')
+const [age, setage ] = useState(0)
 const [race, setrace ] = useState('')
-const [life, setlife ] = useState('')
-const [magicPoint, setmagicPoint ] = useState('')
-const [XP, setXP ] = useState('')
-const [strength, setstrength ] = useState('')
-const [ability, setability ] = useState('')
-const [resistency, setresistency ] = useState('')
-const [armor, setarmor ] = useState('')
-const [intelection, setintelection ] = useState('')
+const [life, setlife ] = useState(0)
+const [magicPoint, setmagicPoint ] = useState(0)
+const [XP, setXP ] = useState(0)
+const [strength, setstrength ] = useState(0)
+const [ability, setability ] = useState(0)
+const [resistency, setresistency ] = useState(0)
+const [armor, setarmor ] = useState(0)
+const [intelection, setintelection ] = useState(0)
 const [skills, setskills ] = useState([])
 const [magicSkills, setmagicSkills ] = useState([])
 const [benefits, setbenefits ] = useState([])
@@ -58,12 +59,21 @@ const addList = ({ target: { name } }) => {
       break;  
   }
 }
+  const validName = name.length >= 1 
+  const validHistory = history.length <= 84 
+  const validEquipament = equipments.length <= 9 
+  const validSkills = skills.length <= 9 
+  const validBenefits = benefits.length <= 9 
+  const validDisadvantage = disadvantage.length <= 9 
+  const validMagicSkills = magicSkills.length <= 9 
+  const validButton = validName && validHistory && validEquipament &&
+                       validSkills && validBenefits && validDisadvantage &&
+                        validMagicSkills
 
   const NavigateTo = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
 
-  const handleChange = ({ target: { value, name } }) => {
-    console.log(value);
+  const handleChange = ({ target: { value, name, files } }) => {
     switch (name) {
       case "name" :
     setname(value)
@@ -99,10 +109,16 @@ const addList = ({ target: { name } }) => {
     setintelection(value)
     break;
   case "image" : 
-    setimage(value)
+  const reader = new FileReader();
+  reader.readAsDataURL(files[0]);
+  reader.onload = () => {
+
+    console.log(reader.result);
+    setimage(reader.result)
+  }
     break;
     case "history" : 
-    sethistory(value)
+      sethistory(value)
     break;
     case "prevEquipment":
       setPrevEquipment(value)
@@ -158,6 +174,7 @@ const create = async () => {
   return (
     <div>
       <Header />
+    <div className={ styles.CreatePerson}>
       <FormsPerson 
   handleChange={handleChange}
   addList={addList}
@@ -186,17 +203,14 @@ const create = async () => {
   prevEquipment={prevEquipment}
   />
   <button
+      className={ styles.button}
       type="button"
       onClick={ create }
+      disabled={!validButton}
       >
         Create
       </button>
-   <button
-        type="button"
-        onClick={() => NavigateTo(-1)}
-      >
-        voltar
-      </button>
+    </div>
     </div>
   );
 }

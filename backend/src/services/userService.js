@@ -24,7 +24,7 @@ const validateLogin = (message, user) => {
   if (message === null) {
     return { type: 404, message: 'not found' };
   }
-  if (Number(message.dataValues.password) !== Number(user.password)) {
+  if (message.dataValues.password !== user.password) {
     console.log('message', message.dataValues.password);
     console.log('user', user.password);
     return { type: 400, message: 'password invalid' };

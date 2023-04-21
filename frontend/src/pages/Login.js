@@ -1,4 +1,4 @@
-
+import styles from './Pages.module.css'
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -6,7 +6,7 @@ import FormsLogin from '../components/FormsLogin';
 
 function Login() {
   const [inputEmail, setInputEmail ] = useState("")
-  const [inputPassword, setInputPassword ] = useState(1)
+  const [inputPassword, setInputPassword ] = useState("")
   
   const NavigateTo = useNavigate();
   
@@ -23,12 +23,12 @@ function Login() {
     try {
       const response = await axios.post('http://localhost:3000/user/login',{
         email: inputEmail,
-        password: Number(inputPassword),
+        password: inputPassword,
       })
       console.log(response);
       if (response.data) {
         setInputEmail('');
-        setInputPassword(0);
+        setInputPassword('');
         localStorage.setItem('user', JSON.stringify({userId: response.data.id, userName: response.data.name}));
         return NavigateTo("/myPersons")
       } 
@@ -39,25 +39,38 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className={ styles.loginAndRegister}>
+      <div className={ styles.containerloginAndRegister}>
+
       <FormsLogin 
         handleChange={handleChange}
-        login={login}
         inputEmail={inputEmail}
         inputPassword={inputPassword}
-      />
-      <button
-        type="button"
-        onClick={() => NavigateTo("/createFast")}
+        />
+      <div className={styles.containerButton}>
+        <button
+      className={styles.button}
+      type="button"
+      onClick={ login }
       >
-        fast create
+        login
       </button>
       <button
+      className={styles.button}
         type="button"
         onClick={() => NavigateTo("/register")}
       >
         register
       </button>
+      </div>
+      <button
+      className={styles.button}
+      type="button"
+      onClick={() => NavigateTo("/createFast")}
+      >
+        fast create
+      </button>
+        </div>
     </div>
   );
 }

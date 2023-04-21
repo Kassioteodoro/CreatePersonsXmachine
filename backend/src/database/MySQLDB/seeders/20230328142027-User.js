@@ -5,12 +5,12 @@ module.exports = {
       {
         name: 'kassio',
         email: 'kassio@gmail.com',
-        password: 123456,
+        password: '123456',
       },
       {
         name: 'leo',
         email: 'leo@gmail.com',
-        password: 1234567,
+        password: '1234567',
       },
     ]);
   },

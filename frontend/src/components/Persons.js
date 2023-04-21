@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from "./components.module.css"
 import axios from 'axios';
 
 function Persons() {
@@ -18,22 +19,28 @@ function Persons() {
   }, [])
 
   return (
-    <div>
+    <div className={styles.PersonList}>
       {
         persons.length > 0 ?
             persons.map((person) => {
               return (
                 <div 
+                className={styles.CardPerson}
                 onClick={ () => NavigateTo(`/viewPerson/${person._id}`)}
                 >
                  <br/>
                  <br/>
-                 {person.nome}
+                 <h3>
+                  {person.nome}
+                  </h3>
                  <br/>
+                 <h4>
                  {person.raça}
+                 </h4>
                  <br/>
                  <img
-                  height={ 100 }
+                  height={ 250 }
+                  width={ 200 }
                   src={ person.imagem }
                   alt={ person.name }
                 />

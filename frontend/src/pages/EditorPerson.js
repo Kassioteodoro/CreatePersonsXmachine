@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import FormsPerson from '../components/FormsPerson';
+import styles from './Pages.module.css'
 import axios from 'axios';
 
 function EditorPerson() {
 const [name, setname ] = useState(null)
-const [age, setage ] = useState('')
+const [age, setage ] = useState(0)
 const [race, setrace ] = useState('')
-const [life, setlife ] = useState('')
-const [magicPoint, setmagicPoint ] = useState('')
-const [XP, setXP ] = useState('')
-const [strength, setstrength ] = useState('')
-const [ability, setability ] = useState('')
-const [resistency, setresistency ] = useState('')
-const [armor, setarmor ] = useState('')
-const [intelection, setintelection ] = useState('')
+const [life, setlife ] = useState(0)
+const [magicPoint, setmagicPoint ] = useState(0)
+const [XP, setXP ] = useState(0)
+const [strength, setstrength ] = useState(0)
+const [ability, setability ] = useState(0)
+const [resistency, setresistency ] = useState(0)
+const [armor, setarmor ] = useState(0)
+const [intelection, setintelection ] = useState(0)
 const [skills, setskills ] = useState([])
 const [magicSkills, setmagicSkills ] = useState([])
 const [benefits, setbenefits ] = useState([])
@@ -87,6 +88,23 @@ const addList = ({ target: { name } }) => {
       break;  
   }
 }
+const validHistory = history.length <= 84 
+const validEquipament = equipments.length <= 9 
+const validSkills = skills.length <= 9 
+const validBenefits = benefits.length <= 9 
+const validDisadvantage = disadvantage.length <= 9 
+const validMagicSkills = magicSkills.length <= 9 
+const validButton = () => {
+    if (name !== null ) {
+    const validName = name.length >= 1 
+
+      return validName && validHistory && validEquipament &&
+      validSkills && validBenefits && validDisadvantage &&
+      validMagicSkills
+    }
+    return false
+  } 
+  
 
 
   const NavigateTo = useNavigate();
@@ -111,11 +129,11 @@ const addList = ({ target: { name } }) => {
             inteligencia: intelection,
             armadura: armor,
           },
-          habilidades: [skills],
-          magias: [magicSkills],
-          vantagens: [benefits],
-          desvantagens: [disadvantage],
-          equipamento: [equipments],
+          habilidades: skills,
+          magias: magicSkills,
+          vantagens: benefits,
+          desvantagens: disadvantage,
+          equipamento: equipments,
         }
       )
       console.log("response", response);
@@ -125,8 +143,8 @@ const addList = ({ target: { name } }) => {
     }
   }
 
-  const handleChange = ({ target: { value, name } }) => {
-    console.log(value);
+  const handleChange = ({ target: { value, name,files } }) => {
+    // console.log(files[0]);
     switch (name) {
       case "name" :
     setname(value)
@@ -162,7 +180,13 @@ const addList = ({ target: { name } }) => {
     setintelection(value)
     break;
   case "image" : 
-    setimage(value)
+  const reader = new FileReader();
+  reader.readAsDataURL(files[0]);
+  reader.onload = () => {
+
+    console.log(reader.result);
+    setimage(reader.result)
+  }
     break;
     case "history" : 
     sethistory(value)
@@ -187,6 +211,9 @@ const addList = ({ target: { name } }) => {
 
   return (
     <div>
+    <div className={ styles.CreatePerson}>
+
+
       <h1>
       EDITOR
       </h1>
@@ -221,18 +248,26 @@ const addList = ({ target: { name } }) => {
   />
   : null
 }
+<div className={styles.containerButton}>
+
+
     <button
+        className={styles.button}
         type="button"
         onClick={editor}
+        disabled={!validButton()}
       >
         Editar
     </button>
     <button
+        className={styles.button}
         type="button"
         onClick={() => NavigateTo(-1)}
       >
         voltar
     </button>
+        </div>
+  </div>
     </div>
   );
 }
