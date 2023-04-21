@@ -69,22 +69,22 @@ const removeList = ({ target: { name } }) => {
       break;
     case "skills":
       if (prevSkills !== '') 
-        setskills((prev) => [...prev, prevSkills])
+        setskills((prev) => prev.filter((value) => value !== prevSkills))
         setPrevSkills('')
       break;
     case "magicSkills":
       if (prevMagicSkills !== '') 
-        setmagicSkills((prev) => [...prev, prevMagicSkills])
+        setmagicSkills((prev) => prev.filter((value) => value !== prevMagicSkills))
         setPrevMagicSkills('')
       break;
     case "benefits":
       if (prevBenefits !== '') 
-        setbenefits((prev) => [...prev, prevBenefits])
+        setbenefits((prev) => prev.filter((value) => value !== prevBenefits))
         setPrevBenefits('')
       break;
     case "disadvantage":
       if (prevDisadvantage !== '') 
-        setdisadvantage((prev) => [...prev, prevDisadvantage])
+        setdisadvantage((prev) => prev.filter((value) => value !== prevDisadvantage))
         setPrevDisadvantage('')
       break;  
   }
