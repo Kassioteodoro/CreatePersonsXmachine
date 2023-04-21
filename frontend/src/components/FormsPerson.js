@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./components.module.css"
 
 function FormsPerson({
-  handleChange, addList,
+  handleChange, addList, removeList,
   name, age, race, life,magicPoint,
   XP, strength, ability, resistency,armor,
   intelection, skills, magicSkills, benefits, disadvantage,
@@ -262,6 +262,13 @@ function FormsPerson({
 
       <label className={styles.label}>
         <div>
+        <button 
+      name='equipment'
+      className={styles.button1}
+      onClick={removeList}
+      >
+        -
+      </button>
       <button 
       name='equipment'
       className={styles.button1}
