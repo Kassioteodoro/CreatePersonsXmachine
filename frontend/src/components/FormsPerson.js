@@ -146,6 +146,13 @@ function FormsPerson({
       <div className={styles.containerAbilit}>
       <label className={styles.label}>
         <div>
+        <button 
+      className={styles.button1}
+      name='skills'
+      onClick={removeList}
+      >
+        -
+      </button>
       <button 
       className={styles.button1}
       name='skills'
@@ -171,6 +178,13 @@ function FormsPerson({
       </label>
       <label className={styles.label}>
         <div>
+        <button 
+      className={styles.button1}
+      name='magicSkills'
+      onClick={removeList}
+      >
+        -
+      </button>
       <button 
       className={styles.button1}
       name='magicSkills'
@@ -199,6 +213,13 @@ function FormsPerson({
       <button 
       className={styles.button1}
       name='benefits'
+      onClick={removeList}
+      >
+        -
+      </button>
+      <button 
+      className={styles.button1}
+      name='benefits'
       onClick={addList}
       >
         +
@@ -221,6 +242,13 @@ function FormsPerson({
       </label>
       <label className={styles.label}>
         <div>
+        <button 
+      className={styles.button1}
+      name='disadvantage'
+      onClick={removeList}
+      >
+        -
+      </button>
       <button 
       className={styles.button1}
       name='disadvantage'
