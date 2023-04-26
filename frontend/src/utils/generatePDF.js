@@ -27,30 +27,30 @@ const generatePDF = (
 doc.setFontSize(40);
 doc.text("Create Person Xmachine", 25, 25);
 doc.setFontSize(25);
-doc.text("Nome:", 20, 50);
+doc.text("Name:", 20, 50);
 doc.text(nome, 48, 50);
-doc.text("Raça:", 20, 60);
+doc.text("Race:", 20, 60);
 doc.text(raca, 45, 60);
-doc.text("Idade:", 20, 70);
-doc.text(idade.toString(), 47, 70);
-doc.text("Vida:", 20, 80);
-doc.text(vida.toString(), 42, 80);
+doc.text("Age:", 20, 70);
+doc.text(idade.toString(), 40, 70);
+doc.text("Life:", 20, 80);
+doc.text(vida.toString(), 40, 80);
 doc.text("XP:", 20, 90);
 doc.text(XP.toString(), 36, 90);
-doc.text("Força:", 20, 110);
-doc.text(forca.toString(), 47, 110);
-doc.text("Magia:", 20, 120);
+doc.text("Strength:", 20, 110);
+doc.text(forca.toString(), 56, 110);
+doc.text("Magic:", 20, 120);
 doc.text(magia.toString(), 48, 120);
-doc.text("Habilidade:", 20, 130);
-doc.text(habilidade.toString(), 66, 130);
-doc.text("Inteligencia:", 20, 140);
-doc.text(inteligencia.toString(), 68, 140);
-doc.text("Armadura:", 20, 150);
-doc.text(armadura.toString(), 63, 150);
-doc.text("Resistencia:", 20, 160);
-doc.text(resistencia.toString(), 70, 160);
+doc.text("Ability:", 20, 130);
+doc.text(habilidade.toString(), 48, 130);
+doc.text("Intelection:", 20, 140);
+doc.text(inteligencia.toString(), 65, 140);
+doc.text("Armor:", 20, 150);
+doc.text(armadura.toString(), 48, 150);
+doc.text("Resistency:", 20, 160);
+doc.text(resistencia.toString(), 68, 160);
 doc.addImage(imagem, "JPEG", 100, 40, 100, 120);
-doc.text("historia:", 10, 180);
+doc.text("History:", 10, 180);
 doc.setFontSize(18);
 const historiaList = historia.match(/.{1,28}/g)
 for (let int = 0; int < historiaList.length; int++) {
@@ -58,7 +58,7 @@ for (let int = 0; int < historiaList.length; int++) {
   historiaPage += 10;
 }
 doc.setFontSize(25);
-doc.text("Habilidades:", 10, 220);
+doc.text("Skills:", 10, 220);
 doc.setFontSize(18);
 const habilidadeslist = divisorTexto(habilidades)
 for (let int = 0; int < habilidadeslist.length; int++) {
@@ -66,7 +66,7 @@ for (let int = 0; int < habilidadeslist.length; int++) {
   habilidadesPage += 10;
 }
 doc.setFontSize(25);
-doc.text("Magias:", 10, 260);
+doc.text("MagicSkills:", 10, 260);
 doc.setFontSize(18);
 const magiaslist = divisorTexto(magias)
 for (let int = 0; int < magiaslist.length; int++) {
@@ -74,7 +74,7 @@ for (let int = 0; int < magiaslist.length; int++) {
   magiasPage += 10;
 }
 doc.setFontSize(25);
-doc.text("Vantagens:", 110, 180);
+doc.text("Benefits:", 110, 180);
 doc.setFontSize(18);
 const vantagenslist = divisorTexto(vantagens)
 for (let int = 0; int < vantagenslist.length; int++) {
@@ -82,7 +82,7 @@ for (let int = 0; int < vantagenslist.length; int++) {
   vantagensPage += 10;
 }
 doc.setFontSize(25);
-doc.text("Desvantagens:", 110, 220);
+doc.text("Disadvantage:", 110, 220);
 doc.setFontSize(18);
 const desvantagenslist = divisorTexto(desvantagens)
 for (let int = 0; int < desvantagenslist.length; int++) {
@@ -90,7 +90,7 @@ for (let int = 0; int < desvantagenslist.length; int++) {
   desvantagensPage += 10;
 }
 doc.setFontSize(25);
-doc.text("Equipamentos:", 110, 260);
+doc.text("Equipment:", 110, 260);
 doc.setFontSize(18);
 const equipamentoslist = divisorTexto(equipamentos)
 for (let int = 0; int < equipamentoslist.length; int++) {

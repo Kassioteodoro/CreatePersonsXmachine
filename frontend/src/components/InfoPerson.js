@@ -13,7 +13,7 @@ function InfoPerson({
       <div className={styles.InfoPersonContainer1}>
         <label className={styles.LabelView}>
         <h2>
-        nome:
+        Name:
         </h2>
         <h3>{name}</h3>
         </label>
@@ -34,7 +34,7 @@ function InfoPerson({
         <div className={styles.InfoPersonContainer2}>
           <label className={styles.LabelView}>
             <h2>
-          age: 
+          Age: 
             </h2>
       <h3>{age}</h3>
           </label>
@@ -46,13 +46,13 @@ function InfoPerson({
           </label>
           <label className={styles.LabelView}>
           <h2>
-          life: 
+          Life: 
             </h2>
       <h3>{life}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          magic: 
+          Magic: 
             </h2>
       <h3>{magicPoint}</h3>
           </label>
@@ -96,31 +96,31 @@ function InfoPerson({
         </label>
         <label className={styles.LabelView}>
           <h2>
-        magicSkills: 
+        MagicSkills: 
           </h2>
         <h3>{magicSkills.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        benefits: 
+        Benefits: 
           </h2>
         <h3>{benefits.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        disadvantage: 
+        Disadvantage: 
           </h2>
         <h3>{disadvantage.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        equipment: 
+        Equipment: 
           </h2>
         <h3>{equipments.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        history: 
+        History: 
           </h2>
         <h3>{history}</h3>
         </label>

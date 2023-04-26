@@ -34,7 +34,7 @@ function Login() {
 
         }}
         >
-        exit
+        Exit
       </button>
     </div>
   );

@@ -113,7 +113,7 @@
 .InfoPersonContainer2 {
   background-color: blue;
   width: 80%;
-  height: 40vh;
+  height: 60vh;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;

@@ -224,7 +224,7 @@ const newPDF = async () => {
         type="button"
         onClick={() => NavigateTo(-1)}
         >
-        voltar
+        Back
     </button>
         </section>
     </div>

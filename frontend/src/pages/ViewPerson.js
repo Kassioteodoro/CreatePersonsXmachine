@@ -65,14 +65,14 @@ const newPDF = async () => {
       type="button"
       onClick={() => NavigateTo(`/editorPerson/${id}`)}
       >
-      Editar
+      Edit
       </button>
       <button
         className={styles}
         type="button"
         onClick={() => NavigateTo(-1)}
         >
-      voltar
+      Back
       </button>
       <button
       className={styles}

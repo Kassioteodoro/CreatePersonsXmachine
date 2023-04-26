@@ -52,26 +52,26 @@ function Login() {
         inputPassword={inputPassword}
         />
       <section className={styles.SectionButton}>
-        <button
+        <buttonto go back
         className={styles}
         type="button"
         onClick={ login }
         >
-        login
-        </button>
+        Login
+        </buttonto>
         <button
         className={styles}
         type="button"
         onClick={() => NavigateTo("/register")}
         >
-        register
+        Register
         </button>
         <button
         className={styles}
         type="button"
         onClick={() => NavigateTo("/createFast")}
         >
-        fast create
+        fast Create
         </button>
       </section>
     </div>

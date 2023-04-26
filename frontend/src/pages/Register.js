@@ -58,14 +58,14 @@ function Register() {
       type="button"
       onClick={ Register }
       >
-        register
+        Register
       </button>
       <button
       className={styles}
       type="button"
       onClick={() => NavigateTo(-1)}
       >
-        voltar
+        Back
       </button>
         </section>
     </div>
