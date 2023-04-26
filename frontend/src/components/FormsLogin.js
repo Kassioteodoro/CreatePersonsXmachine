@@ -8,20 +8,20 @@ function FormsLogin({
   return (
     <forms className={styles.FormLogin}>
         <input 
-        className={styles}
+        className={styles.InputLogin}
       type="text"
       name='Email'
       value={inputEmail}
       onChange={handleChange} 
-      placeholder="Email..."
+      placeholder="  Email..."
       />
       <input 
-        className={styles}
+        className={styles.InputLogin}
       type="text"
       name='Password'
       value={inputPassword}
       onChange={handleChange}
-      placeholder="Password..."
+      placeholder="  Password..."
       />
     </forms>
   );

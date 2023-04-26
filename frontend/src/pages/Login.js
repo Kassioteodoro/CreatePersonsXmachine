@@ -52,13 +52,13 @@ function Login() {
         inputPassword={inputPassword}
         />
       <section className={styles.SectionButton}>
-        <buttonto go back
+        <button
         className={styles}
         type="button"
         onClick={ login }
         >
         Login
-        </buttonto>
+        </button>
         <button
         className={styles}
         type="button"
