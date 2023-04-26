@@ -35,37 +35,7 @@ const newPDF = async () => {
   }, [])
 
   return (
-    <div>
-      <div className={styles.HeaderViewPerson}>
-      <button
-      className={styles.button2}
-      type="button"
-      onClick={() => NavigateTo(`/editorPerson/${id}`)}
-      >
-      Editar
-      </button>
-      <button
-        className={styles.button2}
-        type="button"
-        onClick={() => NavigateTo(-1)}
-        >
-      voltar
-      </button>
-      <button
-      className={styles.button2}
-      type="button"
-      onClick={newPDF}
-      >
-      PDF
-      </button>
-      <button
-      className={styles.button2}
-      type="button"
-      onClick={DeletePerson}
-      >
-      Delete
-      </button>
-      </div>
+    <div className={styles.ViewBody}>
       {
         person !== null ? 
           <InfoPerson 
@@ -89,6 +59,36 @@ const newPDF = async () => {
   equipments={person.equipamento} />
         : null
       }
+      <section className={styles.SectionButton}>
+      <button
+      className={styles}
+      type="button"
+      onClick={() => NavigateTo(`/editorPerson/${id}`)}
+      >
+      Editar
+      </button>
+      <button
+        className={styles}
+        type="button"
+        onClick={() => NavigateTo(-1)}
+        >
+      voltar
+      </button>
+      <button
+      className={styles}
+      type="button"
+      onClick={newPDF}
+      >
+      PDF
+      </button>
+      <button
+      className={styles}
+      type="button"
+      onClick={DeletePerson}
+      >
+      Delete
+      </button>
+      </section>
   </div>
   );
 }

@@ -6,9 +6,9 @@ function FormsLogin({
   inputEmail, inputPassword,}) {
 
   return (
-    <forms className={styles.FormsLoginAndRegister}>
+    <forms className={styles.FormLogin}>
         <input 
-        className={styles.inputLoginAndRegister}
+        className={styles}
       type="text"
       name='Email'
       value={inputEmail}
@@ -16,14 +16,13 @@ function FormsLogin({
       placeholder="Email..."
       />
       <input 
-        className={styles.inputLoginAndRegister}
+        className={styles}
       type="text"
       name='Password'
       value={inputPassword}
       onChange={handleChange}
       placeholder="Password..."
       />
-     
     </forms>
   );
 }

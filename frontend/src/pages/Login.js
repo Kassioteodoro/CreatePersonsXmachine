@@ -40,43 +40,40 @@ function Login() {
   }
 
   return (
-    <div className={ styles.loginAndRegister}>
+    <div className={styles.LoginBody}>
        <img
-                  height={ 300 }
-                  width={ 200 }
+                  width={ 300 }
                   src={logo}
-                  // alt={ name }
+                  alt={ "logo, Create Person X Machine" }
                   />
-      <div className={ styles.containerloginAndRegister}>
       <FormsLogin 
         handleChange={handleChange}
         inputEmail={inputEmail}
         inputPassword={inputPassword}
         />
-      <div className={styles.containerButton}>
+      <section className={styles.SectionButton}>
         <button
-      className={styles.button}
-      type="button"
-      onClick={ login }
-      >
+        className={styles}
+        type="button"
+        onClick={ login }
+        >
         login
-      </button>
-      <button
-      className={styles.button}
+        </button>
+        <button
+        className={styles}
         type="button"
         onClick={() => NavigateTo("/register")}
-      >
+        >
         register
-      </button>
-      </div>
-      <button
-      className={styles.button}
-      type="button"
-      onClick={() => NavigateTo("/createFast")}
-      >
+        </button>
+        <button
+        className={styles}
+        type="button"
+        onClick={() => NavigateTo("/createFast")}
+        >
         fast create
-      </button>
-        </div>
+        </button>
+      </section>
     </div>
   );
 }

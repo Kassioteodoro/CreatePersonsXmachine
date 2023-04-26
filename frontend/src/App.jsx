@@ -6,12 +6,11 @@ import MyPersons from './pages/MyPersons'
 import Create from './pages/Create';
 import ViewPerson from './pages/ViewPerson';
 import FastPerson from './pages/FastPerson';
-import './index.css';
 import EditorPerson from './pages/EditorPerson';
 
 function App() {
   return (
-    <div>
+    <>
         <Routes>
           <Route 
             exact path="/" 
@@ -45,7 +44,7 @@ function App() {
             element={ <EditorPerson/>}
             />
         </Routes>
-    </div>
+    </>
   );
 }
 

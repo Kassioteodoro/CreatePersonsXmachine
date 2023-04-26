@@ -9,47 +9,122 @@ function InfoPerson({
 
     
   return (
-    <div className={styles.FormsPerson}>
-      <div className={styles.container3}>
-      <div>
-      <div className={styles.container2}>
-        <h1>nome: {name}</h1>
-        <h1>Race: {race}</h1>
-      </div>
-      <div className={styles.container2}>
-      <h1>age: {age}</h1>
-      <h1>lifePoint: {life}</h1>
-        <h1>XP: {XP}</h1>
-      </div>
-      <div className={styles.container2}>
+    <div className={styles.InfoBody}>
+      <div className={styles.InfoPersonContainer1}>
+        <label className={styles.LabelView}>
+        <h2>
+        nome:
+        </h2>
+        <h3>{name}</h3>
+        </label>
+        <label className={styles.LabelView}>
+        <h2>
+        Race:
+        </h2>
+        <h3>{race}</h3>
+        </label>
 
-      <h1>magicPoint: {magicPoint}</h1>
-      <h1>Strength: {strength}</h1>
-        <h1>Ability: {ability}</h1>
-      <h1>Resistency: {resistency}</h1>
-        <h1>Armor: {armor}</h1>
-      <h1>Intelection: {intelection}</h1>
       </div>
-      </div>
-        <img
+        <img      className={styles.ImageView}
                   height={ 300 }
                   width={ 200 }
                   src={ image }
                   alt={ name }
                   />
+        <div className={styles.InfoPersonContainer2}>
+          <label className={styles.LabelView}>
+            <h2>
+          age: 
+            </h2>
+      <h3>{age}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          XP: 
+            </h2>
+        <h3>{XP}</h3>
+          </label>
+          <label className={styles.LabelView}>
+          <h2>
+          life: 
+            </h2>
+      <h3>{life}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          magic: 
+            </h2>
+      <h3>{magicPoint}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          Intelection:   
+            </h2>
+      <h3>{intelection}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          Ability: 
+            </h2>
+        <h3>{ability}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          Strength:   
+            </h2>
+      <h3>{strength}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          Resistency: 
+            </h2>
+      <h3>{resistency}</h3>
+          </label>
+          <label className={styles.LabelView}>
+            <h2>
+          Armor: 
+            </h2>
+        <h3>{armor}</h3>
+          </label>
         </div>
-        <div className={styles.container3}>
-        <div className={styles.container2}>
-        <h1>Skills:<br/> {skills.join(', ')}</h1>
-        <h1>magicSkills:<br/> {magicSkills.join(', ')}</h1>
-        <h1>benefits:<br/> {benefits.join(', ')}</h1>
-        </div>
-        <div className={styles.container2}>
-        <h1>disadvantage:<br/> {disadvantage.join(', ')}</h1>
-        <h1>history:<br/> {history}</h1>
-        <h1>equipment:<br/> {equipments.join(', ')}</h1>
-        </div>
-        </div>
+      <div className={styles.InfoPersonContainer2}>
+        <label className={styles.LabelView}>
+          <h2>
+        Skills: 
+          </h2>
+        <h3>{skills.join(', ')}</h3>
+        </label>
+        <label className={styles.LabelView}>
+          <h2>
+        magicSkills: 
+          </h2>
+        <h3>{magicSkills.join(', ')}</h3>
+        </label>
+        <label className={styles.LabelView}>
+          <h2>
+        benefits: 
+          </h2>
+        <h3>{benefits.join(', ')}</h3>
+        </label>
+        <label className={styles.LabelView}>
+          <h2>
+        disadvantage: 
+          </h2>
+        <h3>{disadvantage.join(', ')}</h3>
+        </label>
+        <label className={styles.LabelView}>
+          <h2>
+        equipment: 
+          </h2>
+        <h3>{equipments.join(', ')}</h3>
+        </label>
+        <label className={styles.LabelView}>
+          <h2>
+        history: 
+          </h2>
+        <h3>{history}</h3>
+        </label>
+      </div>
     </div>
   );
 }

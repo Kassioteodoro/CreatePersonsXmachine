@@ -19,33 +19,28 @@ function Persons() {
   }, [])
 
   return (
-    <div className={styles.PersonList}>
+    <div className={styles.PersonBody}>
       {
         persons.length > 0 ?
             persons.map((person) => {
               return (
                 <div 
-                className={styles.CardPerson}
+                className={styles.PersonCard}
                 onClick={ () => NavigateTo(`/viewPerson/${person._id}`)}
                 >
-                 <br/>
-                 <br/>
                  <h3>
                   {person.nome}
                   </h3>
-                 <br/>
                  <h4>
                  {person.raça}
                  </h4>
-                 <br/>
                  <img
+                 className={styles.ImagePerson}
                   height={ 250 }
                   width={ 200 }
                   src={ person.imagem }
                   alt={ person.name }
                 />
-                <br/>
-                <br/>
               </div>
               );
             })

@@ -242,7 +242,7 @@ const validButton = () => {
 
   return (
     <div>
-    <div className={ styles.CreatePerson}>
+    <div className={ styles.EditBody}>
 
 
       <h1>
@@ -280,11 +280,11 @@ const validButton = () => {
   />
   : null
 }
-<div className={styles.containerButton}>
+<section className={styles.SectionButton}>
 
 
     <button
-        className={styles.button}
+        className={styles}
         type="button"
         onClick={editor}
         disabled={!validButton()}
@@ -292,13 +292,13 @@ const validButton = () => {
         Editar
     </button>
     <button
-        className={styles.button}
+        className={styles}
         type="button"
         onClick={() => NavigateTo(-1)}
       >
         voltar
     </button>
-        </div>
+        </section>
   </div>
     </div>
   );

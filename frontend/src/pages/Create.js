@@ -204,8 +204,8 @@ const create = async () => {
 }
   return (
     <div>
-      <Header />
-    <div className={ styles.CreatePerson}>
+      <Header className={ styles.Header}/>
+    <div className={ styles.CreateBody}>
       <FormsPerson 
   handleChange={handleChange}
   addList={addList}

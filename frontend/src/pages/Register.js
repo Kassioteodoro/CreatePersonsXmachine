@@ -44,31 +44,30 @@ function Register() {
   }
 
   return (
-    <div className={styles.loginAndRegister}>
-      <div className={styles.containerloginAndRegister}>
+    <div className={styles.RegisterBody}>
+      <h1>REGISTER</h1>
       <FormsRegister 
       inputEmail={inputEmail}
       inputName={inputName}
       inputPassword={inputPassword}
       handleChange={handleChange}
       />
-      <div className={styles.containerButton}>
+      <section className={styles.SectionButton}>
        <button
-      className={styles.button}
+      className={styles}
       type="button"
       onClick={ Register }
       >
         register
       </button>
       <button
-      className={styles.button}
+      className={styles}
       type="button"
       onClick={() => NavigateTo(-1)}
       >
         voltar
       </button>
-        </div>
-        </div>
+        </section>
     </div>
   );
 }

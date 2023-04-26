@@ -8,23 +8,25 @@ function Login() {
 
   return (
     <div className={styles.Header}>
-      <div className={styles.containerHeaderButton}>
+      <div className={styles.Name}>
+      <h3>{user.userName}</h3>
+      </div>
       <button
-        className={styles.button2}
+        className={styles}
         type="button"
         onClick={() => NavigateTo('/myPersons')}
       >
         My Persons
       </button>
       <button
-        className={styles.button2}
+        className={styles}
         type="button"
         onClick={() => NavigateTo('/create')}
         >
         Create
       </button>
       <button
-        className={styles.button2}
+        className={styles}
         type="button"
         onClick={() => {
           localStorage.clear();
@@ -34,8 +36,6 @@ function Login() {
         >
         exit
       </button>
-        </div>
-      <h3>{user.userName}</h3>
     </div>
   );
 }

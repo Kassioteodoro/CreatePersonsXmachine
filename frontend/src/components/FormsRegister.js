@@ -7,9 +7,9 @@ function FormsLogin({
 }) {
 
   return (
-    <forms className={styles.FormsLoginAndRegister}>
+    <forms className={styles.FormRegister}>
       <input
-      className={ styles.inputLoginAndRegister}
+      className={styles}
       type="text"
       name='Name'
       value={inputName}
@@ -17,7 +17,7 @@ function FormsLogin({
       placeholder='surname...' 
       />
       <input 
-      className={ styles.inputLoginAndRegister}
+      className={styles}
 
       type="text"
       name='Email'
@@ -27,7 +27,7 @@ function FormsLogin({
 
       />
       <input 
-      className={ styles.inputLoginAndRegister}
+      className={styles}
 
       type="text"
       name='Password'

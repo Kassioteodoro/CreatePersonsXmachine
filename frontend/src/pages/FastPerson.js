@@ -177,10 +177,10 @@ const newPDF = async () => {
 }
   return (
     <div
-    className={styles.FastPerson}
+    className={styles.FastCreateBody}
     >
       <h1>
-      Create Fast
+      Fast Create
       </h1>
       <FormsPerson 
   handleChange={handleChange}
@@ -210,7 +210,7 @@ const newPDF = async () => {
   prevDisadvantage={prevDisadvantage}
   prevEquipment={prevEquipment}
   />
-  <div className={styles.containerButton}>
+  <section className={styles.SectionButton}>
       <button
       className={styles.button}
         type="button"
@@ -226,7 +226,7 @@ const newPDF = async () => {
         >
         voltar
     </button>
-        </div>
+        </section>
     </div>
   );
 }

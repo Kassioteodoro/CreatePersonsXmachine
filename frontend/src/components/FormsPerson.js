@@ -10,23 +10,23 @@ function FormsPerson({
   prevBenefits, prevDisadvantage, prevMagicSkills }) {
   
   return (
-    <forms className={styles.FormsPerson}>
+    <forms className={styles.FormPerson}>
 
-      <div className={styles.container2}>
-        <label>
+      <div className={styles.FormPersonContainer1}>
+        <label className={styles.LabelForm}>
           Name:
           <input 
-            className={styles.inputName}
+            className={styles}
             type="text"
             name='name'
             value={name}
             onChange={handleChange} 
           />
         </label>
-        <label>
+        <label className={styles.LabelForm}>
           Race:
           <input 
-            className={styles.inputRace}
+            className={styles}
             type="text"
             name='race'
             value={race}
@@ -35,31 +35,40 @@ function FormsPerson({
         </label>
       </div>
 
-      <div className={styles.container2}>
-        <label>
+  <label className={styles.LabelForm}>
+  Image:
+  <input 
+  className={styles}
+  type="file"
+  name='image'
+  onChange={handleChange}
+  />
+  </label>
+      <div className={styles.FormPersonContainer2}>
+        <label className={styles.LabelForm}>
           Age:
           <input 
-            className={styles.inputValue1}
+            className={styles.InputNumber}
             type="number"
             name='age'
             value={age}
             onChange={handleChange} 
           />
         </label>
-        <label>
+        <label className={styles.LabelForm}>
           LifePoints: 
           <input 
-            className={styles.inputValue1}
+            className={styles.InputNumber}
             type="number"
             name='life'
             value={life}
             onChange={handleChange} 
           />
         </label>
-        <label>
+        <label className={styles.LabelForm}>
           XP: 
           <input 
-            className={styles.inputValue1}
+            className={styles.InputNumber}
             type="number"
             name='XP'
             value={XP}
@@ -67,101 +76,94 @@ function FormsPerson({
           />
         </label>
       </div>
-      <div 
-      className={styles.container1}>
-      <div className={styles.containerAbilit}>
-        <label>
+
+
+      <div className={styles.FormPersonContainer2}>
+        <label className={styles.LabelForm}>
           MagicPoints: 
           <input 
-            className={styles.inputValue1}
+            className={styles.InputNumber}
             type="number"
             name='magicPoint'
             value={magicPoint}
             onChange={handleChange} 
           />
         </label>
-        <label>
-          Strength:
-          <input 
-            className={styles.inputValue1}
-            type="number"
-            name='strength'
-            value={strength}
-            onChange={handleChange} 
-          />
-        </label>
-        <label>
-          Ability:
-          <input 
-            className={styles.inputValue1}
-            type="number"
-            name='ability'
-            value={ability}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Resistency:
-          <input 
-            className={styles.inputValue1}
-            type="number"
-            name='resistency'
-            value={resistency}
-            onChange={handleChange} 
-          />
-        </label>
-        <label>
-          Armor:
-          <input 
-            className={styles.inputValue1}
-            type="number"
-            name='armor'
-            value={armor}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
+
+        <label className={styles.LabelForm}>
           Intelection:
           <input 
-            className={styles.inputValue1}
+            className={styles.InputNumber}
             type="number"
             name='intelection'
             value={intelection}
             onChange={handleChange} 
             />
         </label>
-      </div>
-      <label className={styles.labelHistory}>
-      Image:
-      <input 
-      className={styles.inputValueImage}
-      type="file"
-      name='image'
-      onChange={handleChange}
-      />
-      </label>
+        <label className={styles.LabelForm}>
+          Ability:
+          <input 
+            className={styles.InputNumber}
+            type="number"
+            name='ability'
+            value={ability}
+            onChange={handleChange}
+          />
+        </label>
       </div>
 
-      <div className={styles.container1}>
-      <div className={styles.containerAbilit}>
-      <label className={styles.label}>
+      <div className={styles.FormPersonContainer2}> 
+      <label className={styles.LabelForm}>
+          Strength:
+          <input 
+            className={styles.InputNumber}
+            type="number"
+            name='strength'
+            value={strength}
+            onChange={handleChange} 
+          />
+        </label>
+        <label className={styles.LabelForm}>
+          Resistency:
+          <input 
+            className={styles.InputNumber}
+            type="number"
+            name='resistency'
+            value={resistency}
+            onChange={handleChange} 
+          />
+        </label>
+        <label className={styles.LabelForm}>
+          Armor:
+          <input 
+            className={styles.InputNumber}
+            type="number"
+            name='armor'
+            value={armor}
+            onChange={handleChange}
+          />
+        </label>
+        </div>
+
+        <div className={styles.FormPersonContainer3}>
+        <label className={styles.LabelForm}>
         <div>
         <button 
-      className={styles.button1}
+      className={styles}
       name='skills'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles.button1}
+      className={styles}
       name='skills'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles.inputValue2}
+      className={styles}
       placeholder='skills'
       type="text"
       name='prevSkills'
@@ -170,30 +172,30 @@ function FormsPerson({
       />
       </div>
       <textarea 
-      className={styles.inputValue3}
+      className={styles}
       type="text"
       name='skills'
       value={skills.join(', ')}
       />
       </label>
-      <label className={styles.label}>
+      <label className={styles.LabelForm}>
         <div>
         <button 
-      className={styles.button1}
+      className={styles}
       name='magicSkills'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles.button1}
+      className={styles}
       name='magicSkills'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles.inputValue2}
+      className={styles}
       placeholder='magicSkills'
       type="text"
       name='prevMagicSkills'
@@ -202,30 +204,30 @@ function FormsPerson({
       />
       </div>
       <textarea
-      className={styles.inputValue3}
+      className={styles}
       type="text"
       name='magicSkills'
       value={magicSkills.join(', ')}
       />
       </label>
-      <label className={styles.label}>
+      <label className={styles.LabelForm}>
       <div>
       <button 
-      className={styles.button1}
+      className={styles}
       name='benefits'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles.button1}
+      className={styles}
       name='benefits'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles.inputValue2}
+      className={styles}
       placeholder='benefits'
       type="text"
       name='prevBenefits'
@@ -234,30 +236,30 @@ function FormsPerson({
       />
       </div>
       <textarea
-      className={styles.inputValue3}
+      className={styles}
       type="text"
       name='benefits'
       value={benefits.join(', ')}
       />
       </label>
-      <label className={styles.label}>
+      <label className={styles.LabelForm}>
         <div>
         <button 
-      className={styles.button1}
+      className={styles}
       name='disadvantage'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles.button1}
+      className={styles}
       name='disadvantage'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles.inputValue2}
+      className={styles}
       type="text"
       name='prevDisadvantage'
       value={prevDisadvantage}
@@ -266,46 +268,31 @@ function FormsPerson({
       />
       </div>
       <textarea 
-      className={styles.inputValue3}
+      className={styles}
       type="text"
       name='disadvantage'
       value={disadvantage.join(', ')}
       />
       </label>
-      </div>
-      
 
-      <div className={styles.containerAbilit}>
-      <label className={styles.label}>
-      History:
-      <textarea 
-      className={styles.inputValueHistory}
-      type="text"
-      name='history'
-      value={history}
-      onChange={handleChange}
-      wrap='hard'
-      />
-      </label>
-
-      <label className={styles.label}>
+      <label className={styles.LabelForm}>
         <div>
         <button 
       name='equipment'
-      className={styles.button1}
+      className={styles}
       onClick={removeList}
       >
         -
       </button>
       <button 
       name='equipment'
-      className={styles.button1}
+      className={styles}
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles.inputValue2}
+      className={styles}
       placeholder='equipment'
       type="text"
       name='prevEquipment'
@@ -314,14 +301,22 @@ function FormsPerson({
       />
       </div>
       <textarea 
-      className={styles.inputValueHistory}
+      className={styles}
       type="test"
       name="equipments"
       value={equipments.join(', ')}
-      width={300}
       />
       </label>
-      </div>
+      <label className={styles.LabelForm}>
+      History:
+      <textarea 
+      className={styles}
+      type="text"
+      name='history'
+      value={history}
+      onChange={handleChange}
+      />
+      </label>
       </div>
     </forms>
   );
