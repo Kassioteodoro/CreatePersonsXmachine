@@ -73,11 +73,18 @@
 
 /* utils */
 
+.Button1 {
+  border: 0;
+  border-radius: 2vh;
+  width: 30%;
+  height: 5vh;
+}
+
 .SectionButton {
   background-color: red;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 50%;
+  width: 65%;
   height: 10vh;
 }

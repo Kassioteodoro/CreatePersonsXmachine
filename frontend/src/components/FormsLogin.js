@@ -8,7 +8,7 @@ function FormsLogin({
   return (
     <forms className={styles.FormLogin}>
         <input 
-        className={styles.InputLogin}
+        className={styles.Input1}
       type="text"
       name='Email'
       value={inputEmail}
@@ -16,7 +16,7 @@ function FormsLogin({
       placeholder="  Email..."
       />
       <input 
-        className={styles.InputLogin}
+        className={styles.Input1}
       type="text"
       name='Password'
       value={inputPassword}

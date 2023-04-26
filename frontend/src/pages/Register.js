@@ -54,14 +54,14 @@ function Register() {
       />
       <section className={styles.SectionButton}>
        <button
-      className={styles}
+      className={styles.Button1}
       type="button"
       onClick={ Register }
       >
         Register
       </button>
       <button
-      className={styles}
+      className={styles.Button1}
       type="button"
       onClick={() => NavigateTo(-1)}
       >

@@ -9,31 +9,31 @@ function FormsLogin({
   return (
     <forms className={styles.FormRegister}>
       <input
-      className={styles}
+      className={styles.Input1}
       type="text"
       name='Name'
       value={inputName}
       onChange={handleChange}
-      placeholder='surname...' 
+      placeholder='  Surname...' 
       />
       <input 
-      className={styles}
+      className={styles.Input1}
 
       type="text"
       name='Email'
       value={inputEmail}
       onChange={handleChange}
-      placeholder='Email...' 
+      placeholder='  Email...' 
 
       />
       <input 
-      className={styles}
+      className={styles.Input1}
 
       type="text"
       name='Password'
       value={inputPassword}
       onChange={handleChange}
-      placeholder='password...' 
+      placeholder='  Password...' 
 
       />
     </forms>
