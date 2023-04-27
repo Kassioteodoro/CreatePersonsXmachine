@@ -103,6 +103,7 @@
 /* InfoPerson */
 
 .InfoBody {
+  border-radius: 5vh;
   background-color: red;
   width: 80%;
   height: 80%;
@@ -124,7 +125,7 @@
 
 .InfoPersonContainer2 {
   background-color: blue;
-  width: 80%;
+  width: 100%;
   height: 65vh;
   display: flex;
   flex-flow: row;
@@ -214,7 +215,7 @@
   
   .LabelForm {
     background-color: red;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -284,7 +284,7 @@ const validButton = () => {
 
 
     <button
-        className={styles}
+        className={styles.Button1}
         type="button"
         onClick={editor}
         disabled={!validButton()}
@@ -292,7 +292,7 @@ const validButton = () => {
         Edit
     </button>
     <button
-        className={styles}
+        className={styles.Button1}
         type="button"
         onClick={() => NavigateTo(-1)}
       >
