@@ -7,7 +7,11 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: blue;
+  /* background-color: blue; */
+  background-image: url("../images/adb21d43-9cc6-474c-8415-5cf2fa1d5855.jpg");
+  background-size: 150%;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 /* register */
@@ -19,60 +23,87 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: blue;
+  /* background-color: blue; */
+  background-image: url("../images/2afe9e8b-e15a-4ad6-bc2c-f9871391aea5.jpg");
+  background-size: 150%;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 /* FastCreate */
 
 .FastCreateBody {
   width: 100%;
-  height: 130vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: blue;
+  /* background-color: blue; */
+  background-image: url("../images/2afe9e8b-e15a-4ad6-bc2c-f9871391aea5.jpg");
+  background-size: 220%;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 /* Create */
 
 .CreateBody {
+  background-image: url("../images/5e728d9f-0869-4080-9802-8c951f94b754.jpg");
+  background-size: 210%;
+  background-position-x: center;
+  background-position-y: center;
+
+  /* background-color: blue; */
+}
+
+.CreateContainer {
   width: 100%;
   height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: blue;
+  /* background-color: blue; */
 }
-
 /* View */
 
 .ViewBody {
+  background-image: url("../images/2afe9e8b-e15a-4ad6-bc2c-f9871391aea5.jpg");
+  background-size: 250%;
+  background-position-x: center;
+  background-position-y: center;
   width: 100%;
   height: 170vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: blue;
 }
 
 /* Edit */
 
 .EditBody {
+  background-image: url("../images/2ac15b5b-2e92-4504-b865-a302417b6fe2.jpg");
+  background-size: 220%;
+  background-position-x: center;
+  background-position-y: center;
   width: 100%;
-  height: 130vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 /* utils */
 
 .Button1 {
+  font-size:medium;
+  font-family: 'Averia Serif Libre', cursive;
+  background-color: #592F16;
+  opacity: 90%;
   border: 0;
   border-radius: 2vh;
   width: 30%;
@@ -80,6 +111,10 @@
 }
 
 .Button2 {
+  font-size:medium;
+  font-family: 'Averia Serif Libre', cursive;
+  background-color: #592F16;
+  opacity: 90%;
   border: 0;
   border-radius: 2vh;
   width: 20%;
@@ -87,7 +122,7 @@
 }
 
 .SectionButton {
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -96,10 +131,17 @@
 }
 
 .SectionButton1 {
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 80%;
   height: 10vh;
+}
+
+.MyPersonsBody {
+  background-image: url("../images/5e728d9f-0869-4080-9802-8c951f94b754.jpg");
+  background-size: 210%;
+  background-position-x: center;
+  background-position-y: center;
 }

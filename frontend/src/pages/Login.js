@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FormsLogin from '../components/FormsLogin';
-import logo from '../images/logo.png';
+import logo from '../images/Logo.png';
 
 function Login() {
   const [inputEmail, setInputEmail ] = useState("")

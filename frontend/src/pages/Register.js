@@ -3,6 +3,7 @@ import styles from './Pages.module.css'
 import { useNavigate } from 'react-router-dom';
 import FormsRegister from '../components/FormsRegister';
 import axios from 'axios';
+import register from '../images/Register.png';
 
 function Register() {
   const [inputEmail, setInputEmail ] = useState("")
@@ -45,7 +46,11 @@ function Register() {
 
   return (
     <div className={styles.RegisterBody}>
-      <h1>REGISTER</h1>
+       <img
+                  width={ 300 }
+                  src={register}
+                  alt={ "Register" }
+                  />
       <FormsRegister 
       inputEmail={inputEmail}
       inputName={inputName}

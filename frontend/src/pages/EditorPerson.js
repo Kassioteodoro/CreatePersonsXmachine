@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import FormsPerson from '../components/FormsPerson';
 import styles from './Pages.module.css'
 import axios from 'axios';
+import edit from '../images/Edit.png';
 
 function EditorPerson() {
 const [name, setname ] = useState(null)
@@ -245,9 +246,11 @@ const validButton = () => {
     <div className={ styles.EditBody}>
 
 
-      <h1>
-      EDITOR
-      </h1>
+    <img
+                  width={ 300 }
+                  src={edit}
+                  alt={ "Edit" }
+                  />
       {
         name !== null ? 
         <FormsPerson 

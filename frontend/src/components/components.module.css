@@ -1,7 +1,7 @@
 /* Login */
-
 .FormLogin {
-  background-color: red;
+  background-color: #D9A566;
+  opacity: 85%;
   width: 65%;
   height: 15vh;
   border-radius: 3vh;
@@ -14,7 +14,9 @@
 /* register */
 
 .FormRegister {
-  background-color: red;
+  /* background-color: red; */ 
+  background-color: #D9A566;
+  opacity: 85%;
   width: 65%;
   height: 20vh;
   border-radius: 3vh;
@@ -27,7 +29,9 @@
 /* Person */
 
 .FormPerson {
-  background-color: red;
+  /* background-color: red; */
+  background-color: #D9A566;
+  opacity: 85%;
   border-radius: 5vh;
   width: 80%;
   height: 110vh;
@@ -39,7 +43,7 @@
 }
 
 .FormPersonContainer1 {
-  background-color: blue;
+  /* background-color: blue; */
   width: 65%;
   height: 15vh;
   display: flex;
@@ -49,7 +53,7 @@
 }
 
 .FormPersonContainer2 {
-  background-color: blue;
+  /* background-color: blue; */
   width: 65%;
   height: 5vh;
   display: flex;
@@ -58,7 +62,7 @@
 }
 
 .FormPersonContainer3 {
-  background-color: blue;
+  /* background-color: blue; */
   width: 65%;
   height: 60vh;
   display: flex;
@@ -68,7 +72,7 @@
 }
 
 .FormPersonContainer4 {
-  background-color: blue;
+  /* background-color: blue; */
   width: 100%;
   margin-bottom: 2px;
   display: flex;
@@ -78,9 +82,9 @@
 }
 
 .PersonBody {
-  background-color: blue;
+  /* background-color: blue; */
   width: 100%;
-  height: 130vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -88,9 +92,13 @@
 }
 
 .PersonCard {
+  /* background-color: red; */
+  font-size:medium;
+  font-family: 'Averia Serif Libre', cursive;
+  background-color: #D9A566;
+  opacity: 90%;
   border-radius: 20px;
   margin-top: 10px;
-  background-color: red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,10 +111,12 @@
 /* InfoPerson */
 
 .InfoBody {
+  /* background-color: red; */
+  background-color: #D9A566;
+  opacity: 75%;
   border-radius: 5vh;
-  background-color: red;
   width: 80%;
-  height: 80%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -115,7 +125,7 @@
 
 .InfoPersonContainer1 {
   margin-top: 1vh;
-  background-color: blue;
+  /* background-color: blue; */
   width: 80%;
   height: 5vh;
   display: flex;
@@ -124,7 +134,7 @@
 }
 
 .InfoPersonContainer2 {
-  background-color: blue;
+  /* background-color: blue; */
   width: 100%;
   height: 65vh;
   display: flex;
@@ -136,6 +146,8 @@
 }
 
 .LabelView {
+  font-size:medium;
+  font-family: 'Averia Serif Libre', cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,7 +162,7 @@
 /* Header */
 
 .Header {
-  background-color: red;
+  /* background-color: red; */
   width: 100%;
   height: 10vh;
   display: flex;
@@ -159,7 +171,9 @@
 }
 
 .Name {
-  background-color: blue;
+  font-size:medium;
+  font-family: 'Averia Serif Libre', cursive;
+  /* background-color: blue; */
   padding: 20px;
   border-radius: 100%;
 }
@@ -167,13 +181,17 @@
   /* utils */
   
   .InputNumber {
-    border: 0;
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
+    text-align: center;
     border-radius: 5vh;
     width: 4vh;
     height: 3vh;
   }
 
   .Button1 {
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
     border: 0;
     border-radius: 0.5vh;
     width: 3vh;
@@ -181,6 +199,10 @@
   }
 
   .Button2 {
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
+    background-color: #592F16;
+    opacity: 90%;
     border: 0;
     border-radius: 1vh;
     width: 10vh;
@@ -188,18 +210,27 @@
   }
 
   .Input1 {
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
+    text-align: center;
     border: 0;
     border-radius: 25vh;
     width: 25vh;
     height: 4vh;
   }
   .Input2 {
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
+    text-align: center;
     border: 0;
     border-radius: 25vh;
     width: 25vh;
     height: 3vh;
   }
   .Input3 {
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
+    text-align: center;
     border: 0;
     border-radius: 1vh;
     width: 100%;
@@ -207,6 +238,8 @@
   }
 
   .Input4 {
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
     border: 0;
     border-radius: 1vh;
     width: 100%;
@@ -214,7 +247,9 @@
   }
   
   .LabelForm {
-    background-color: red;
+    /* background-color: red; */
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -222,7 +257,9 @@
   }
 
   .LabelForm2 {
-    background-color: red;
+    /* background-color: red; */
+    font-size:medium;
+    font-family: 'Averia Serif Libre', cursive;
     width: 100%;
     height: 8vh;
     display: flex;

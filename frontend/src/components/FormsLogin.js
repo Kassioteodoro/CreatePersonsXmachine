@@ -13,7 +13,7 @@ function FormsLogin({
       name='Email'
       value={inputEmail}
       onChange={handleChange} 
-      placeholder="  Email..."
+      placeholder="Email..."
       />
       <input 
         className={styles.Input1}
@@ -21,7 +21,7 @@ function FormsLogin({
       name='Password'
       value={inputPassword}
       onChange={handleChange}
-      placeholder="  Password..."
+      placeholder="Password..."
       />
     </forms>
   );

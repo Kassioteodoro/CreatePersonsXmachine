@@ -203,9 +203,9 @@ const create = async () => {
   }
 }
   return (
-    <div>
-      <Header className={ styles.Header}/>
     <div className={ styles.CreateBody}>
+      <Header className={ styles.Header}/>
+    <div className={ styles.CreateContainer}>
       <FormsPerson 
   handleChange={handleChange}
   addList={addList}

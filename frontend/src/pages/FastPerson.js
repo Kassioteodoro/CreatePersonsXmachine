@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import FormsPerson from '../components/FormsPerson';
 import generatePDF from '../utils/generatePDF';
 import styles from './Pages.module.css'
+import fastCreate from '../images/FastCreate.png';
 
 function FastPerson() {
 const [name, setname ] = useState('')
@@ -179,9 +180,11 @@ const newPDF = async () => {
     <div
     className={styles.FastCreateBody}
     >
-      <h1>
-      Fast Create
-      </h1>
+          <img
+                  width={ 300 }
+                  src={fastCreate}
+                  alt={ "Fast Create" }
+                  />
       <FormsPerson 
   handleChange={handleChange}
   addList={addList}
