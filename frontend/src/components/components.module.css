@@ -178,6 +178,13 @@
     height: 100%;
   }
 
+  .Button2 {
+    border: 0;
+    border-radius: 1vh;
+    width: 10vh;
+    height: 40%;
+  }
+
   .Input1 {
     border: 0;
     border-radius: 25vh;

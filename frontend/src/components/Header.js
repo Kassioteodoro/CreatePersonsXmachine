@@ -12,21 +12,21 @@ function Login() {
       <h3>{user.userName}</h3>
       </div>
       <button
-        className={styles}
+        className={styles.Button2}
         type="button"
         onClick={() => NavigateTo('/myPersons')}
       >
         My Persons
       </button>
       <button
-        className={styles}
+        className={styles.Button2}
         type="button"
         onClick={() => NavigateTo('/create')}
         >
         Create
       </button>
       <button
-        className={styles}
+        className={styles.Button2}
         type="button"
         onClick={() => {
           localStorage.clear();
