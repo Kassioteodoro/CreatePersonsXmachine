@@ -212,7 +212,7 @@ const newPDF = async () => {
   />
   <section className={styles.SectionButton}>
       <button
-      className={styles.button}
+      className={styles.Button1}
         type="button"
         onClick={newPDF}
         disabled={!validButton}
@@ -220,7 +220,7 @@ const newPDF = async () => {
         PDF
     </button>
     <button
-        className={styles.button}
+        className={styles.Button1}
         type="button"
         onClick={() => NavigateTo(-1)}
         >

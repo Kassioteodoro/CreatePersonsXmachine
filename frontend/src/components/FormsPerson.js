@@ -16,7 +16,7 @@ function FormsPerson({
         <label className={styles.LabelForm}>
           Name:
           <input 
-            className={styles}
+            className={styles.Input2}
             type="text"
             name='name'
             value={name}
@@ -26,7 +26,7 @@ function FormsPerson({
         <label className={styles.LabelForm}>
           Race:
           <input 
-            className={styles}
+            className={styles.Input2}
             type="text"
             name='race'
             value={race}
@@ -42,7 +42,8 @@ function FormsPerson({
   type="file"
   name='image'
   onChange={handleChange}
-  />
+  >
+  </input>
   </label>
       <div className={styles.FormPersonContainer2}>
         <label className={styles.LabelForm}>
@@ -146,24 +147,24 @@ function FormsPerson({
         </div>
 
         <div className={styles.FormPersonContainer3}>
-        <label className={styles.LabelForm}>
-        <div>
+        <label className={styles.LabelForm2}>
+        <div className={styles.FormPersonContainer4}>
         <button 
-      className={styles}
+      className={styles.Button1}
       name='skills'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles}
+      className={styles.Button1}
       name='skills'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles}
+      className={styles.Input3}
       placeholder='skills'
       type="text"
       name='prevSkills'
@@ -172,30 +173,30 @@ function FormsPerson({
       />
       </div>
       <textarea 
-      className={styles}
+      className={styles.Input4}
       type="text"
       name='skills'
       value={skills.join(', ')}
       />
       </label>
-      <label className={styles.LabelForm}>
-        <div>
+      <label className={styles.LabelForm2}>
+        <div className={styles.FormPersonContainer4}>
         <button 
-      className={styles}
+      className={styles.Button1}
       name='magicSkills'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles}
+      className={styles.Button1}
       name='magicSkills'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles}
+      className={styles.Input3}
       placeholder='magicSkills'
       type="text"
       name='prevMagicSkills'
@@ -204,30 +205,30 @@ function FormsPerson({
       />
       </div>
       <textarea
-      className={styles}
+      className={styles.Input4}
       type="text"
       name='magicSkills'
       value={magicSkills.join(', ')}
       />
       </label>
-      <label className={styles.LabelForm}>
-      <div>
+      <label className={styles.LabelForm2}>
+      <div className={styles.FormPersonContainer4}>
       <button 
-      className={styles}
+      className={styles.Button1}
       name='benefits'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles}
+      className={styles.Button1}
       name='benefits'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles}
+      className={styles.Input3}
       placeholder='benefits'
       type="text"
       name='prevBenefits'
@@ -236,30 +237,30 @@ function FormsPerson({
       />
       </div>
       <textarea
-      className={styles}
+      className={styles.Input4}
       type="text"
       name='benefits'
       value={benefits.join(', ')}
       />
       </label>
-      <label className={styles.LabelForm}>
-        <div>
+      <label className={styles.LabelForm2}>
+        <div className={styles.FormPersonContainer4}>
         <button 
-      className={styles}
+      className={styles.Button1}
       name='disadvantage'
       onClick={removeList}
       >
         -
       </button>
       <button 
-      className={styles}
+      className={styles.Button1}
       name='disadvantage'
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles}
+      className={styles.Input3}
       type="text"
       name='prevDisadvantage'
       value={prevDisadvantage}
@@ -268,31 +269,30 @@ function FormsPerson({
       />
       </div>
       <textarea 
-      className={styles}
+      className={styles.Input4}
       type="text"
       name='disadvantage'
       value={disadvantage.join(', ')}
       />
       </label>
-
-      <label className={styles.LabelForm}>
-        <div>
+      <label className={styles.LabelForm2}>
+        <div className={styles.FormPersonContainer4}>
         <button 
       name='equipment'
-      className={styles}
+      className={styles.Button1}
       onClick={removeList}
       >
         -
       </button>
       <button 
       name='equipment'
-      className={styles}
+      className={styles.Button1}
       onClick={addList}
       >
         +
       </button>
       <input 
-      className={styles}
+      className={styles.Input3}
       placeholder='equipment'
       type="text"
       name='prevEquipment'
@@ -301,16 +301,16 @@ function FormsPerson({
       />
       </div>
       <textarea 
-      className={styles}
+      className={styles.Input4}
       type="test"
       name="equipments"
       value={equipments.join(', ')}
       />
       </label>
-      <label className={styles.LabelForm}>
+      <label className={styles.LabelForm2}>
       History:
       <textarea 
-      className={styles}
+      className={styles.Input4}
       type="text"
       name='history'
       value={history}

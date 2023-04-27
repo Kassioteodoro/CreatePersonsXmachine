@@ -26,7 +26,7 @@
 
 .FastCreateBody {
   width: 100%;
-  height: 120vh;
+  height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -37,9 +37,8 @@
 /* Create */
 
 .CreateBody {
-  margin-top: 10vh;
   width: 100%;
-  height: 110vh;
+  height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -63,7 +62,7 @@
 
 .EditBody {
   width: 100%;
-  height: 120vh;
+  height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
