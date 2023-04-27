@@ -59,30 +59,30 @@ const newPDF = async () => {
   equipments={person.equipamento} />
         : null
       }
-      <section className={styles.SectionButton}>
+      <section className={styles.SectionButton1}>
       <button
-      className={styles}
+      className={styles.Button2}
       type="button"
       onClick={() => NavigateTo(`/editorPerson/${id}`)}
       >
       Edit
       </button>
       <button
-        className={styles}
+        className={styles.Button2}
         type="button"
         onClick={() => NavigateTo(-1)}
         >
       Back
       </button>
       <button
-      className={styles}
+      className={styles.Button2}
       type="button"
       onClick={newPDF}
       >
       PDF
       </button>
       <button
-      className={styles}
+      className={styles.Button2}
       type="button"
       onClick={DeletePerson}
       >

@@ -104,8 +104,8 @@
 
 .InfoBody {
   background-color: red;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -113,6 +113,7 @@
 }
 
 .InfoPersonContainer1 {
+  margin-top: 1vh;
   background-color: blue;
   width: 80%;
   height: 5vh;
@@ -124,7 +125,7 @@
 .InfoPersonContainer2 {
   background-color: blue;
   width: 80%;
-  height: 60vh;
+  height: 65vh;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
