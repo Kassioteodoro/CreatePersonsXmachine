@@ -235,7 +235,7 @@ const create = async () => {
   prevEquipment={prevEquipment}
   />
   <button
-      className={ styles.button}
+      className={ styles.Button1}
       type="button"
       onClick={ create }
       disabled={!validButton}
