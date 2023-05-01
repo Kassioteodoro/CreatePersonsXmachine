@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import FormsPerson from '../components/FormsPerson';
 import axios from 'axios';
 import styles from './Pages.module.css'
+import Compress from 'compress.js'
 
 function Create() {
 const [name, setname ] = useState('')
@@ -29,6 +30,8 @@ const [prevSkills, setPrevSkills ] = useState('')
 const [prevMagicSkills, setPrevMagicSkills ] = useState('')
 const [prevBenefits, setPrevBenefits ] = useState('')
 const [prevDisadvantage, setPrevDisadvantage ] = useState('')
+
+const compress = new Compress()
 
 const addList = ({ target: { name } }) => {
   switch(name) {
@@ -104,7 +107,7 @@ const removeList = ({ target: { name } }) => {
   const NavigateTo = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
 
-  const handleChange = ({ target: { value, name, files } }) => {
+  const handleChange = async ({ target: { value, name, files } }) => {
     switch (name) {
       case "name" :
     setname(value)
@@ -140,13 +143,16 @@ const removeList = ({ target: { name } }) => {
     setintelection(value)
     break;
   case "image" : 
-  const reader = new FileReader();
-  reader.readAsDataURL(files[0]);
-  reader.onload = () => {
-
-    console.log(reader.result);
-    setimage(reader.result)
-  }
+  const result = await compress.compress([...files], {
+    size: 1,
+    quality: 0.2,
+    maxWidth: 300, 
+    maxHeight: 700, 
+    resize: true
+})
+const file = result[0].data
+const prefix = result[0].prefix
+  setimage(prefix + file)
     break;
     case "history" : 
       sethistory(value)

@@ -4,6 +4,7 @@ import FormsPerson from '../components/FormsPerson';
 import generatePDF from '../utils/generatePDF';
 import styles from './Pages.module.css'
 import fastCreate from '../images/FastCreate.png';
+import Compress from 'compress.js'
 
 function FastPerson() {
 const [name, setname ] = useState('')
@@ -29,6 +30,8 @@ const [prevSkills, setPrevSkills ] = useState('')
 const [prevMagicSkills, setPrevMagicSkills ] = useState('')
 const [prevBenefits, setPrevBenefits ] = useState('')
 const [prevDisadvantage, setPrevDisadvantage ] = useState('')
+
+const compress = new Compress()
 
 const addList = ({ target: { name } }) => {
   switch(name) {
@@ -103,8 +106,8 @@ const validButton = validName && validHistory && validEquipament &&
 
   const NavigateTo = useNavigate();
 
-  const handleChange = ({ target: { value, name, files } }) => {
-    console.log(value);
+  const handleChange = async ({ target: { value, name, files } }) => {
+    // console.log(value);
     switch (name) {
       case "name" :
     setname(value)
@@ -139,15 +142,20 @@ const validButton = validName && validHistory && validEquipament &&
   case "intelection" : 
     setintelection(value)
     break;
-  case "image" : 
-    const reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    reader.onload = () => {
-      // console.log(reader.result);
-      setimage(reader.result)
-  }
+  case "image" :
+    const result = await compress.compress([...files], {
+      size: 1,
+      quality: 0.5,
+      maxWidth: 400, 
+      maxHeight: 700, 
+      resize: true
+  })
+    console.log(result[0]);
+    const img = result[0].data
+    setimage(img)
     break;
     case "history" : 
+    console.log("oi");
     sethistory(value)
     break;
     case "prevEquipment":
