@@ -9,12 +9,13 @@ function FormsPerson({
    history, equipments, prevEquipment, prevSkills,
   prevBenefits, prevDisadvantage, prevMagicSkills }) {
   
+    
   return (
     <forms className={styles.FormPerson}>
 
       <div className={styles.FormPersonContainer1}>
         <label className={styles.LabelForm}>
-          Name:
+          Name
           <input 
             className={styles.Input2}
             type="text"
@@ -24,7 +25,7 @@ function FormsPerson({
           />
         </label>
         <label className={styles.LabelForm}>
-          Race:
+          Race
           <input 
             className={styles.Input2}
             type="text"
@@ -34,9 +35,8 @@ function FormsPerson({
           />
         </label>
       </div>
-
   <label className={styles.LabelForm}>
-  Image:
+  Image
   <input 
   className={styles}
   type="file"
@@ -45,9 +45,10 @@ function FormsPerson({
   >
   </input>
   </label>
+  <br/>
       <div className={styles.FormPersonContainer2}>
         <label className={styles.LabelForm}>
-          Age:
+          Age
           <input 
             className={styles.InputNumber}
             type="number"
@@ -57,7 +58,7 @@ function FormsPerson({
           />
         </label>
         <label className={styles.LabelForm}>
-          LifePoints: 
+          LifePoints 
           <input 
             className={styles.InputNumber}
             type="number"
@@ -67,7 +68,7 @@ function FormsPerson({
           />
         </label>
         <label className={styles.LabelForm}>
-          XP: 
+          XP 
           <input 
             className={styles.InputNumber}
             type="number"
@@ -81,7 +82,7 @@ function FormsPerson({
 
       <div className={styles.FormPersonContainer2}>
         <label className={styles.LabelForm}>
-          MagicPoints: 
+          MagicPoints 
           <input 
             className={styles.InputNumber}
             type="number"
@@ -92,7 +93,7 @@ function FormsPerson({
         </label>
 
         <label className={styles.LabelForm}>
-          Intelection:
+          Intelection
           <input 
             className={styles.InputNumber}
             type="number"
@@ -102,7 +103,7 @@ function FormsPerson({
             />
         </label>
         <label className={styles.LabelForm}>
-          Ability:
+          Ability
           <input 
             className={styles.InputNumber}
             type="number"
@@ -115,7 +116,7 @@ function FormsPerson({
 
       <div className={styles.FormPersonContainer2}> 
       <label className={styles.LabelForm}>
-          Strength:
+          Strength
           <input 
             className={styles.InputNumber}
             type="number"
@@ -125,7 +126,7 @@ function FormsPerson({
           />
         </label>
         <label className={styles.LabelForm}>
-          Resistency:
+          Resistency
           <input 
             className={styles.InputNumber}
             type="number"
@@ -135,7 +136,7 @@ function FormsPerson({
           />
         </label>
         <label className={styles.LabelForm}>
-          Armor:
+          Armor
           <input 
             className={styles.InputNumber}
             type="number"
@@ -309,7 +310,7 @@ function FormsPerson({
       />
       </label>
       <label className={styles.LabelForm2}>
-      History:
+      History
       <textarea 
       className={styles.Input4}
       type="text"

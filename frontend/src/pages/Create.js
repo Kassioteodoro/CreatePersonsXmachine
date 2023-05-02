@@ -94,7 +94,7 @@ const removeList = ({ target: { name } }) => {
 }
 
   const validName = name.length >= 1 
-  const validHistory = history.length <= 84 
+  const validHistory = history.length >= 1 & history.length <= 84
   const validEquipament = equipments.length <= 9 
   const validSkills = skills.length <= 9 
   const validBenefits = benefits.length <= 9 

@@ -13,13 +13,13 @@ function InfoPerson({
       <div className={styles.InfoPersonContainer1}>
         <label className={styles.LabelView}>
         <h2>
-        Name:
+        Name
         </h2>
         <h3>{name}</h3>
         </label>
         <label className={styles.LabelView}>
         <h2>
-        Race:
+        Race
         </h2>
         <h3>{race}</h3>
         </label>
@@ -34,55 +34,55 @@ function InfoPerson({
         <div className={styles.InfoPersonContainer2}>
           <label className={styles.LabelView}>
             <h2>
-          Age: 
+          Age 
             </h2>
       <h3>{age}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          XP: 
+          XP 
             </h2>
         <h3>{XP}</h3>
           </label>
           <label className={styles.LabelView}>
           <h2>
-          Life: 
+          Life 
             </h2>
       <h3>{life}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          Magic: 
+          Magic 
             </h2>
       <h3>{magicPoint}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          Intelection:   
+          Intelection   
             </h2>
       <h3>{intelection}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          Ability: 
+          Ability 
             </h2>
         <h3>{ability}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          Strength:   
+          Strength   
             </h2>
       <h3>{strength}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          Resistency: 
+          Resistency 
             </h2>
       <h3>{resistency}</h3>
           </label>
           <label className={styles.LabelView}>
             <h2>
-          Armor: 
+          Armor 
             </h2>
         <h3>{armor}</h3>
           </label>
@@ -90,37 +90,37 @@ function InfoPerson({
       <div className={styles.InfoPersonContainer2}>
         <label className={styles.LabelView}>
           <h2>
-        Skills: 
+        Skills 
           </h2>
         <h3>{skills.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        MagicSkills: 
+        MagicSkills 
           </h2>
         <h3>{magicSkills.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        Benefits: 
+        Benefits 
           </h2>
         <h3>{benefits.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        Disadvantage: 
+        Disadvantage 
           </h2>
         <h3>{disadvantage.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        Equipment: 
+        Equipment 
           </h2>
         <h3>{equipments.join(', ')}</h3>
         </label>
         <label className={styles.LabelView}>
           <h2>
-        History: 
+        History 
           </h2>
         <h3>{history}</h3>
         </label>

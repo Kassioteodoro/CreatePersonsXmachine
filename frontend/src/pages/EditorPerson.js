@@ -4,6 +4,7 @@ import FormsPerson from '../components/FormsPerson';
 import styles from './Pages.module.css'
 import axios from 'axios';
 import edit from '../images/Edit.png';
+import Compress from 'compress.js'
 
 function EditorPerson() {
 const [name, setname ] = useState(null)
@@ -29,6 +30,7 @@ const [prevSkills, setPrevSkills ] = useState('')
 const [prevMagicSkills, setPrevMagicSkills ] = useState('')
 const [prevBenefits, setPrevBenefits ] = useState('')
 const [prevDisadvantage, setPrevDisadvantage ] = useState('')
+const compress = new Compress()
 
 const {id} = useParams()
 const user = JSON.parse(localStorage.getItem('user'));
@@ -120,7 +122,7 @@ const removeList = ({ target: { name } }) => {
   }
 }
 
-const validHistory = history.length <= 84 
+const validHistory = history.length >= 1 & history.length <= 84 
 const validEquipament = equipments.length <= 9 
 const validSkills = skills.length <= 9 
 const validBenefits = benefits.length <= 9 
@@ -175,7 +177,7 @@ const validButton = () => {
     }
   }
 
-  const handleChange = ({ target: { value, name,files } }) => {
+  const handleChange = async ({ target: { value, name,files } }) => {
     // console.log(files[0]);
     switch (name) {
       case "name" :
@@ -212,13 +214,16 @@ const validButton = () => {
     setintelection(value)
     break;
   case "image" : 
-  const reader = new FileReader();
-  reader.readAsDataURL(files[0]);
-  reader.onload = () => {
-
-    console.log(reader.result);
-    setimage(reader.result)
-  }
+  const result = await compress.compress([...files], {
+    size: 1,
+    quality: 0.2,
+    maxWidth: 300, 
+    maxHeight: 700, 
+    resize: true
+})
+const file = result[0].data
+const prefix = result[0].prefix
+  setimage(prefix + file)
     break;
     case "history" : 
     sethistory(value)
